@@ -1,16 +1,25 @@
 :root {
-  --normal-blue: #379ae6;
-  --hovered-blue: #197dca;
-  --background-color: #fff;
-  --secondary-background-color: #f8f9fa;
-  --secondary-text-color: #6f7175;
-  --secondary-hover-text-color: #0a0b0c;
-  --font-family: 'Epilogue', sans-serif;
-  --title-font-size: 52px;
+  --normal-blue: #379ae6; /* ?هذا اللون الازرق العادي */
+  --hovered-blue: #197dca; /* ?يوم تعمل هوفر على  زر بتعمل هاي*/
+  --background-color: #fff; /* ?هذا لون الخلفيو العادي ابيض*/
+  --secondary-background-color: #f8f9fa; /*?وهذا لون خلفية الناف والفووتر وفي ال واير فريم واضح الفرق بينهم*/
+  --secondary-text-color: #6f7175; /*?لون النص العادي مش العناوين  */
+  --secondary-hover-text-color: #0a0b0c; /*?وهذا بعد ما تعمل هوفر في حال كان رابط */
+  --font-family: 'Epilogue', sans-serif; /* العائلة الكريمة للخطوط */
+  --title-font-size: 52px; /*?وهون حجم العنواين 
+    ومهم العنوان يوم يوصل ل 768يصير هيك
+    @media (max-width: 768px) {
+  main h1 {
+    font-size: 24px;
+  }
+}
+
+  */
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--font-family);
 }
