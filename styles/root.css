@@ -1,0 +1,16 @@
+:root {
+  --normal-blue: #379ae6;
+  --hovered-blue: #197dca;
+  --background-color: #fff;
+  --secondary-background-color: #f8f9fa;
+  --secondary-text-color: #6f7175;
+  --secondary-hover-text-color: #0a0b0c;
+  --font-family: 'Epilogue', sans-serif;
+  --title-font-size: 52px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
