@@ -1,0 +1,32 @@
+{
+  "members": [
+    {
+      "id": "1",
+      "level": "levelId",
+      "name": "Abdulaziz",
+      "result": 85,
+      "totalTime": 120,
+      "correctAnswers": 2,
+      "wrongAnswers": 1,
+      "questions": {
+        "question1": { "timeTaken": 30, "status": "correct" },
+        "question2": { "timeTaken": 40, "status": "not correct" },
+        "question3": { "timeTaken": 50, "status": "correct" }
+      }
+    },
+    {
+      "id": "2",
+      "level": "levelId",
+      "name": "Bilal",
+      "result": 90,
+      "totalTime": 110,
+      "correctAnswers": 3,
+      "wrongAnswers": 0,
+      "questions": {
+        "question1": { "timeTaken": 35, "status": "correct" },
+        "question2": { "timeTaken": 25, "status": "correct" },
+        "question3": { "timeTaken": 50, "status": "correct" }
+      }
+    }
+  ]
+}

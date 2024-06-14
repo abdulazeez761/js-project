@@ -1,0 +1,18 @@
+{
+  "id": "levelId",
+  "question1": {
+    "id": "1",
+    "questionContext": "example of the question text",
+    "correctAnswers": "300"
+  },
+  "question2": {
+    "id": "2",
+    "questionContext": "example of the question text",
+    "correctAnswers": "900"
+  },
+  "question3": {
+    "id": "3",
+    "questionContext": "example of the question text",
+    "correctAnswers": "100"
+  }
+}

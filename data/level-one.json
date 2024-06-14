@@ -1,0 +1,21 @@
+{
+  "id": "levelId",
+  "question1": {
+    "id": "1",
+    "questionContext": "example of the question text",
+    "correctAnswers": "300",
+    "timeAverage": ""
+  },
+  "question2": {
+    "id": "2",
+    "questionContext": "example of the question text",
+    "correctAnswers": "900",
+    "timeAverage": ""
+  },
+  "question3": {
+    "id": "3",
+    "questionContext": "example of the question text",
+    "correctAnswers": "100",
+    "timeAverage": ""
+  }
+}
