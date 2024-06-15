@@ -1,35 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Medical Billing</title>
-    <link rel="stylesheet" href="../styles/question-page.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../styles/question-page.css" />
+    <link rel="stylesheet" href="../styles/root.css" />
+  </head>
+  <body>
+    <header id="nav-header">
+      <div class="container">
+        <div class="logo">Billimd</div>
+        <nav>
+          <ul class="nav-links">
+            <button class="exit-button">Exit</button>
+          </ul>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </div>
+    </header>
     <div class="progress-bar-container">
-        <div class="progress-bar">
-            <div class="progress">
-                <div class="circle active">1</div>
-                <div class="circle">1</div>
-                <div class="circle">2</div>
-                <div class="circle">3</div>
-                <div class="circle">4</div>
-                <div class="circle">5</div>
-                <div class="circle">6</div>
-                <div class="circle">7</div>
-            </div>
-            <button class="next">&#10095;</button>
-            <div class="timer">00:50:00</div>
+      <div class="progress-bar">
+        <div class="progress">
+          <div class="circle active">1</div>
+          <div class="circle">1</div>
+          <div class="circle">2</div>
+          <div class="circle">3</div>
+          <div class="circle">4</div>
+          <div class="circle">5</div>
+          <div class="circle">6</div>
+          <div class="circle">7</div>
+          <div class="circle">1</div>
+          <div class="circle">2</div>
+          <div class="circle">3</div>
+          <div class="circle">4</div>
+          <div class="circle">5</div>
+          <div class="circle">6</div>
+          <div class="circle">7</div>
         </div>
+        <!-- <button class="next">&#10095;</button> -->
+        <div class="timer">00:50:00</div>
+      </div>
     </div>
     <div class="container">
-        <div class="content">
-            <h1>Simplify Your Medical Billing..<br>Accelerate Your Payments..</h1>
-            <input type="text" placeholder="make sure you write numbers">
-            <button>GO to Next Question →</button>
+      <div class="content">
+        <div class="question-container">
+          <p class="question-text">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus,
+            sit.
+          </p>
         </div>
+        <div class="answer-submit-container">
+          <input type="text" placeholder="make sure you write numbers" />
+          <button>Next Question</button>
+        </div>
+      </div>
     </div>
-    <script src="../scripts/question-page-js"></script>
-</body>
+    <script src="../scripts/question-page.js"></script>
+  </body>
 </html>
