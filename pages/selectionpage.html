@@ -10,6 +10,16 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="screen-blur" id="screen-blur">
+      <div class="enter-id-card">
+        <h3>Enter your ID</h3>
+        <input type="text" name="enter-id-input" placeholder="your id" />
+        <div class="enter-id-buttons">
+          <button class="selection-but1">Confirm</button>
+          <button class="selection-but2" id="cancel-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
     <header id="nav-header">
       <div class="container">
         <div class="logo">Billimd</div>
@@ -29,42 +39,36 @@
         </nav>
       </div>
     </header>
-    <main>
-      <section id="selectionlevel">
-        <div class="container">
-          <div class="row" id="selection-row1">
-            <h1 class="selection-title">Chooes Level To <br />Attempt</h1>
-            <div class="selection-par">
-              <p class="par1">
-                <i
-                  class="fa-regular fa-circle-check"
-                  style="color: #48b6e5"></i>
-                Each level has 20 questions.
-              </p>
-              <p class="par2">
-                <i
-                  class="fa-regular fa-circle-check"
-                  style="color: #48b6e5"></i>
-                Each questoin weight 5 mark
-              </p>
-              <p class="par3">
-                <i
-                  class="fa-regular fa-circle-check"
-                  style="color: #48b6e5"></i>
-                Total questoin time is 1 houre.
-              </p>
-              <div class="selection-buttons">
-                <button class="selection-but1">Level One</button>
-                <button class="selection-but2">Level Two</button>
-              </div>
+    <!-- <main> -->
+    <section id="selectionlevel">
+      <div class="container">
+        <div class="row" id="selection-row1">
+          <h1 class="selection-title">Chooes Level To <br />Attempt</h1>
+          <div class="selection-par">
+            <p class="par1">
+              <i class="fa-regular fa-circle-check" style="color: #48b6e5"></i>
+              Each level has 20 questions.
+            </p>
+            <p class="par2">
+              <i class="fa-regular fa-circle-check" style="color: #48b6e5"></i>
+              Each questoin weight 5 mark
+            </p>
+            <p class="par3">
+              <i class="fa-regular fa-circle-check" style="color: #48b6e5"></i>
+              Total questoin time is 1 houre.
+            </p>
+            <div class="selection-buttons">
+              <button class="selection-btn selection-but1">Level One</button>
+              <button class="selection-btn selection-but2">Level Two</button>
             </div>
           </div>
-          <div class="row" id="selection-row2">
-            <img src="/assets/images/selection-image.png" alt="" />
-          </div>
         </div>
-      </section>
-    </main>
+        <div class="row" id="selection-row2">
+          <img src="/assets/images/selection-image.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <!-- </main> -->
 
     <footer>
       <div>
@@ -104,7 +108,9 @@
 
     <script
       src="https://kit.fontawesome.com/5769cd0a63.js"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    ></script>
     <script src="/scripts/nav.js"></script>
+    <script src="../scripts/popup-card.js"></script>
   </body>
 </html>
