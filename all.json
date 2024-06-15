@@ -1,4 +1,5 @@
 {
+  "status": "pending or started",
   "LevelOne": {
     "id": "levelId",
     "question1": {
