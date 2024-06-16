@@ -6,7 +6,7 @@
   --secondary-text-color: #6f7175;
   --secondary-hover-text-color: #0a0b0c;
   --font-family: 'Epilogue', sans-serif;
-  --title-font-size: 52px;
+  --title-font-size: 36px;
   --sidebar-width: 220px;
 }
 
@@ -23,7 +23,7 @@ body {
 
 .sidebar {
   width: var(--sidebar-width);
-  background-color: var(--secondary-background-color);
+  background-color: var(--normal-blue);
   height: 100vh;
   padding: 20px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -36,11 +36,11 @@ body {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
   margin-bottom: 20px;
-  color: black;
-  text-align: center;
+  color: rgb(255, 255, 255);
+  text-align: left;
 }
 
 .dropdown {
@@ -57,8 +57,11 @@ body {
   cursor: pointer;
   width: 100%;
   text-align: left;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   transition: background-color 0.3s, transform 0.3s;
+  font-weight: bold;
+  border-bottom: 1px solid rgb(143, 196, 245);
+  font-size: 24px;
 }
 
 .dropbtn:hover {
@@ -69,8 +72,7 @@ body {
 .dropdown-content {
   display: none;
   position: relative;
-  background-color: var(--background-color);
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: var(--normal-blue);
   z-index: 1;
   width: 100%;
   border-radius: 5px;
@@ -80,7 +82,7 @@ body {
 }
 
 .dropdown-content button {
-  color: var(--secondary-text-color);
+  color: white;
   padding: 10px;
   text-decoration: none;
   display: block;
@@ -90,11 +92,13 @@ body {
   text-align: left;
   transition: color 0.3s, background-color 0.3s;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 .dropdown-content button:hover {
   color: var(--secondary-hover-text-color);
-  background-color: var(--secondary-background-color);
+  background-color: var(--hovered-blue);
+  color: rgb(221, 221, 221);
   cursor: pointer;
 }
 

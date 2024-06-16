@@ -12,8 +12,16 @@ function addParticipant() {
                     <td>2023-11-15</td>
                     <td>0777777777</td>
                     <td>0</td>
-                    <td><button class="edit-button" onclick="openEditModal(this)">✏️</button></td>
-                    <td><button class="delete-button" onclick="deleteParticipant(this)">🗑️</button></td>
+                    <td>
+                <button class="edit-button" onclick="openEditModal(this)">
+                  <i class="fa-solid fa-user-pen"></i>
+                </button>
+              </td>
+              <td>
+                <button class="delete-button" onclick="deleteParticipant(this)">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </td>
                 `;
     table.appendChild(row);
   }

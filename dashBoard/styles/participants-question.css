@@ -2,7 +2,7 @@
   --normal-blue: #379ae6;
   --hovered-blue: #197dca;
   --background-color: #fff;
-  --secondary-background-color: #f8f9fa;
+  --secondary-background-color: #f9f9f9;
   --secondary-text-color: #6f7175;
   --secondary-hover-text-color: #0a0b0c;
   --font-family: 'Epilogue', sans-serif;
@@ -18,6 +18,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
+
 h1 {
   text-align: center;
   color: var(--secondary-hover-text-color);
@@ -29,6 +30,7 @@ h1 {
   justify-content: space-between;
   margin-bottom: 20px;
 }
+
 .input-container input {
   width: 45%;
   padding: 10px;
@@ -48,18 +50,46 @@ h1 {
 .input-container button:hover {
   background-color: var(--hovered-blue);
 }
+input:focus {
+  outline: var(--hovered-blue) 2px solid;
+}
 table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0px 10px;
 }
-th,
+
 td {
-  padding: 10px;
+  padding: 20px;
   text-align: left;
-  border: 1px solid #ddd;
+
+  border-bottom: 1px solid #ddd;
 }
+tr {
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 5px -5px;
+}
+tr td:first-child,
+th:first-child {
+  border-left: 1px solid #ddd;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+tr td:last-child,
+th:last-child {
+  border-right: 1px solid #ddd;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
 th {
   background-color: var(--secondary-background-color);
+}
+th {
+  padding: 20px;
+  text-align: left;
+
+  border: none;
 }
 .edit-button,
 .delete-button {
@@ -69,18 +99,18 @@ th {
   border-radius: 4px;
 }
 .edit-button {
-  background-color: #ffc107;
+  background-color: var(--normal-blue);
   color: white;
 }
 .edit-button:hover {
-  background-color: #e0a800;
+  background-color: var(--hovered-blue);
 }
 .delete-button {
   background-color: #dc3545;
   color: white;
 }
 .delete-button:hover {
-  background-color: #c82333;
+  background-color: #800713;
 }
 /* Modal styles */
 .modal {
