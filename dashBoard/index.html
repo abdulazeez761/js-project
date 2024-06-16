@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar with Dropdown</title>
+    <link rel="stylesheet" href="./styles/sidebar.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">My Logo</div>
+      <div class="dropdown">
+        <button class="dropbtn">Level 1</button>
+        <div class="dropdown-content">
+          <button
+            id="participants"
+            onclick="navigateTo('./pages/level-one/participants.html')">
+            Participants
+          </button>
+          <button
+            id="questions"
+            onclick="navigateTo('./pages/level-one/questions.html')">
+            Questions
+          </button>
+          <button
+            id="track"
+            onclick="navigateTo('./pages/level-one/track.html')">
+            Track
+          </button>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Level 2</button>
+        <div class="dropdown-content">
+          <button
+            id="participants-2"
+            onclick="navigateTo('./pages/level-two/participants-2.html')">
+            Participants
+          </button>
+          <button
+            id="questions-2"
+            onclick="navigateTo('./pages/level-two/questions-2.html')">
+            Questions
+          </button>
+          <button
+            id="track-2"
+            onclick="navigateTo('./pages/level-two/track-2.html')">
+            track
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <h1>Welcome</h1>
+      <p>DashBoard Home Page</p>
+    </div>
+    <script src="./scripts/sidebar.js"></script>
+  </body>
+</html>
