@@ -4,18 +4,21 @@
     "id": "1",
     "questionContext": "example of the question text",
     "correctAnswers": "300",
-    "timeAverage": ""
+    "timeAverage": "",
+    "totalCorrectAnswers": "number"
   },
   "question2": {
     "id": "2",
     "questionContext": "example of the question text",
     "correctAnswers": "900",
-    "timeAverage": ""
+    "timeAverage": "",
+    "totalCorrectAnswers": "number"
   },
   "question3": {
     "id": "3",
     "questionContext": "example of the question text",
     "correctAnswers": "100",
-    "timeAverage": ""
+    "timeAverage": "",
+    "totalCorrectAnswers": "number"
   }
 }
