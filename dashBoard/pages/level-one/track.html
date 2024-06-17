@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Track</title>
     <link rel="stylesheet" href="../../styles/sidebar.css" />
+    <link rel="stylesheet" href="../../styles/track.css" />
   </head>
   <body>
     <div class="sidebar">
@@ -26,25 +27,81 @@
         <div class="dropdown-content">
           <button
             id="participants-2"
-            onclick="navigateTo('../level-two/participants-2.html')">
+            onclick="navigateTo('../level-two/participants-2.html')"
+          >
             Participants
           </button>
           <button
             id="questions-2"
-            onclick="navigateTo('../level-two/questions-2.html')">
+            onclick="navigateTo('../level-two/questions-2.html')"
+          >
             Questions
           </button>
           <button
             id="track-2"
-            onclick="navigateTo('../level-two/track-2.html')">
+            onclick="navigateTo('../level-two/track-2.html')"
+          >
             Track
           </button>
         </div>
       </div>
     </div>
     <div class="content">
-      <h1>Welcome</h1>
-      <p>level one tracking page</p>
+      <div class="container">
+        <h1>
+          Mathematics Competition
+          <span style="color: var(--normal-blue); margin-left: 10px"
+            >Level 1</span
+          >
+        </h1>
+        <h3>Competition has <span style="color: red">NOT</span> started yet</h3>
+        <button class="btn">Start Competition</button>
+      </div>
+      <div class="container">
+        <h2>
+          Live traking
+          <span style="color: var(--normal-blue); margin-left: 10px"
+            >Level 1</span
+          >
+        </h2>
+        <br />
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Q1</th>
+              <th>Q2</th>
+              <th>Q3</th>
+              <th>Q4</th>
+              <th>Q5</th>
+              <th>Total Time</th>
+              <th>Mark</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Abdulziz</td>
+              <td class="right-answer">3:00</td>
+              <td class="right-answer">2:43</td>
+              <td class="wrong-answer">4:02</td>
+              <td class="right-answer">1:55</td>
+              <td class="right-answer">3:33</td>
+              <td>14:33</td>
+              <td>4/5</td>
+            </tr>
+            <tr>
+              <td>Ahmad</td>
+              <td class="right-answer">3:00</td>
+              <td class="wrong-answer">2:43</td>
+              <td class="right-answer">4:02</td>
+              <td class="right-answer">1:55</td>
+              <td class="wrong-answer">3:33</td>
+              <td>14:33</td>
+              <td>3/5</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     <script src="../../scripts/sidebar.js"></script>
   </body>
