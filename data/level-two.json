@@ -1,18 +1,34 @@
 {
-  "id": "levelId",
-  "question1": {
-    "id": "1",
+  "levleID": "2",
+  "started": "0",
+  "1": {
     "questionContext": "example of the question text",
-    "correctAnswers": "300"
+    "correctAnswers": "300",
+    "totalCorrectAnswers": ""
   },
-  "question2": {
-    "id": "2",
+  "2": {
     "questionContext": "example of the question text",
-    "correctAnswers": "900"
+    "correctAnswers": "900",
+    "totalCorrectAnswers": ""
   },
-  "question3": {
-    "id": "3",
+  "3": {
     "questionContext": "example of the question text",
-    "correctAnswers": "100"
-  }
+    "correctAnswers": "100",
+    "totalCorrectAnswers": ""
+  },
+  "participants": [
+    {
+      "id": "1",
+      "name": "Abdulaziz"
+    },
+    {
+      "id": "2",
+      "name": "Bilal"
+    },
+    {
+      "id": "2",
+      "level": "1",
+      "name": "Bilal"
+    }
+  ]
 }

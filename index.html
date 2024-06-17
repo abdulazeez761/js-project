@@ -22,7 +22,7 @@
             <li><a href="#">Templates</a></li>
             <li><a href="#">Pricing</a></li>
             <li><a href="#">Blog</a></li>
-            <li><a href="#">Login</a></li>
+            <li><a href="./pages/login-page.html">Login</a></li>
           </ul>
           <div class="hamburger">
             <span></span>
@@ -40,7 +40,12 @@
           a streamlined, stress-free process, ensuring you get paid faster and
           with minimal hassle.
         </p>
-        <button class="btn">Attempt</button>
+        <button
+          class="btn"
+          onclick="navigateTo('./pages/selectionpage.html')"
+          id="attempt">
+          Attempt
+        </button>
       </div>
     </main>
     <footer>
@@ -84,5 +89,7 @@
     </footer>
     <script src="./scripts/nav.js"></script>
     <script src="./utils/add-participants.js"></script>
+    <script src="./utils/navigateTo.js"></script>
+    <script src="./scripts/set-local-storage-data.js"></script>
   </body>
 </html>
