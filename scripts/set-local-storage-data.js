@@ -70,11 +70,11 @@ localStorage.setItem(
   'admin',
   `
   {
-  "admins": {
+  "1": {
     "id": 1,
     "name": "abdulaziz",
     "email": "abdulazizharii@gmail.com",
-    "password": "1234"
+    "password": "12345678"
   }
 }
 `
