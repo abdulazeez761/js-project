@@ -13,7 +13,13 @@ function addParticipant() {
 }
 function loadAllParticipants() {
   let participants = JSON.parse(localStorage.getItem('participants'));
-  for (let participantID in participants) {
+  let levelParticipants = {};
+  for (let participant in participants) {
+    if (participants[participant].level == 1)
+      levelParticipants[participant] = participants[participant];
+  }
+
+  for (let participantID in levelParticipants) {
     const table = document.querySelector('table tbody');
     const row = document.createElement('tr');
     let participant = participants[participantID];
