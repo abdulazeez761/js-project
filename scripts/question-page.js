@@ -1,57 +1,116 @@
-// let position = 0;
-// const circles = document.querySelectorAll('.progress .circle');
-// const nextBtn = document.querySelector('.next');
-// const timerElement = document.querySelector('.timer');
+let allParticipants = JSON.parse(localStorage.getItem('participants'));
+let participantLevel = allParticipants;
+const participantID = +localStorage.getItem('currentParticipantID');
+participantLevel = participantLevel[participantID].level;
+participantLevel = participantLevel == 1 ? 'level-one' : 'level-two';
+let levelQuestions = JSON.parse(localStorage.getItem(participantLevel));
 
-// let timer;
-// let seconds = 0;
-// let minutes = 0;
-// let hours = 0;
+// Adding questions bar
+let numberOfQuestions = Object.entries(levelQuestions).length - 2;
+let currentParticipant = allParticipants[participantID];
+let progressBar = document.getElementById('progress-bar-content');
+for (let i = 1; i <= numberOfQuestions; i++) {
+  let newDiv = document.createElement('div');
+  newDiv.classList.add('circle');
+  newDiv.innerText = i;
+  progressBar.appendChild(newDiv);
+}
 
-// nextBtn.addEventListener('click', () => {
-//     if (position < circles.length - 1) {
-//         position++;
-//         updateProgress();
-//         resetTimer();
-//         startTimer();
-//     }
-// });
+// Getting all question IDs
+let allQuestionsIDs = [];
+for (let questionID in levelQuestions) {
+  if (questionID !== 'levelID' && questionID !== 'started') {
+    allQuestionsIDs.push(questionID);
+  }
+}
 
-// function updateProgress() {
-//     circles.forEach((circle, index) => {
-//         if (index === position) {
-//             circle.classList.add('active');
-//         } else {
-//             circle.classList.remove('active');
-//         }
-//     });
-// }
+// Tracking questions
+let questionIndex = 0;
+let currentQuestionID = allQuestionsIDs[questionIndex];
+let questionTextContainer = document.getElementById('question-context');
+const circles = document.querySelectorAll('.progress .circle');
+let startTime;
+let totalTime;
+// Loading the first question
+function loadFirstQuestion() {
+  startTime = new Date();
+  totalTime = new Date();
+  circles.forEach((circle, index) => {
+    if (index === questionIndex) {
+      circle.classList.add('active');
+    } else {
+      circle.classList.remove('active');
+    }
+  });
+  questionTextContainer.innerText =
+    levelQuestions[currentQuestionID].questionContext;
+}
 
-// function resetTimer() {
-//     clearInterval(timer);
-//     seconds = 0;
-//     minutes = 0;
-//     hours = 0;
-//     timerElement.textContent = '00:00:00';
-// }
+loadFirstQuestion();
 
-// function startTimer() {
-//     timer = setInterval(() => {
-//         seconds++;
-//         if (seconds === 60) {
-//             seconds = 0;
-//             minutes++;
-//         }
-//         if (minutes === 60) {
-//             minutes = 0;
-//             hours++;
-//         }
-//         timerElement.textContent = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
-//     }, 1000);
-// }
+const submitAnswer = () => {
+  let answer = document.getElementById('answer-input');
 
-// function formatTime(time) {
-//     return time < 10 ? `0${time}` : time;
-// }
+  if (isNaN(answer.value) || !answer.value) {
+    return Swal.fire({
+      title: 'Answer should be a number',
+      confirmButtonColor: '#3085d6',
+    });
+  }
 
-// updateProgress();
+  let correct = answer.value == levelQuestions[currentQuestionID].correctAnswer;
+  let endTime = new Date();
+  let timeTaken = (endTime - startTime) / 1000; // time taken in seconds
+
+  // Store the time taken for the current question
+  if (!currentParticipant.questions) {
+    currentParticipant.questions = {};
+  }
+  currentParticipant.questions[currentQuestionID] = {
+    answer: answer.value,
+    correct: correct,
+    timeTaken: timeTaken,
+  };
+
+  // Save updated participant data
+  allParticipants[participantID] = currentParticipant;
+  localStorage.setItem('participants', JSON.stringify(allParticipants));
+
+  // Moving to the next question
+  questionIndex++;
+  if (questionIndex < allQuestionsIDs.length - 1) {
+    currentQuestionID = allQuestionsIDs[questionIndex];
+    startTime = new Date(); // reset start time for the new question
+    circles.forEach((circle, index) => {
+      if (index === questionIndex) {
+        circle.classList.add('active');
+      } else {
+        circle.classList.remove('active');
+      }
+    });
+    questionTextContainer.innerText =
+      levelQuestions[currentQuestionID].questionContext;
+    answer.value = '';
+  } else {
+    // Show a completion message and redirect
+    let endTime = new Date();
+    let timeTaken = (endTime - totalTime) / 1000;
+
+    let numberOfCUrrectAnswer = 0;
+    for (question in currentParticipant.questions) {
+      if (currentParticipant.questions[question].correct)
+        ++numberOfCUrrectAnswer;
+    }
+    currentParticipant.totalTime = timeTaken;
+    currentParticipant.result = `${numberOfCUrrectAnswer}/${numberOfQuestions}`;
+
+    allParticipants[participantID] = currentParticipant;
+    localStorage.setItem('participants', JSON.stringify(allParticipants));
+    Swal.fire({
+      title: 'You have completed all questions!',
+      confirmButtonColor: '#3085d6',
+    }).then(() => {
+      window.location.href = '../index.html';
+    });
+  }
+};
