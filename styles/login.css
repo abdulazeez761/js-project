@@ -9,15 +9,19 @@ body {
   align-items: center;
   height: 100vh;
 }
+
 .login-form {
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Fixed width */
+  position: relative; /* Position relative for absolute positioning of error messages */
 }
+
 .login-form input[type='text'],
 .login-form input[type='password'] {
-  width: 100%;
+  width: calc(100% - 22px); /* Adjusted width to accommodate error message */
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ccc;
@@ -35,6 +39,19 @@ body {
   border-radius: 3px;
   cursor: pointer;
 }
+
 input:focus {
   outline: #197dca 2px solid;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  position: absolute;
+  bottom: -20px;
+  left: 10px;
+}
+
+.login-form {
+  position: relative;
 }
