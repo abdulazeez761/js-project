@@ -5,7 +5,7 @@
   --secondary-background-color: #f9f9f9;
   --secondary-text-color: #6f7175;
   --secondary-hover-text-color: #0a0b0c;
-  --font-family: "Epilogue", sans-serif;
+  --font-family: 'Epilogue', sans-serif;
   --title-font-size: 52px;
   --sidebar-width: 220px;
 }
@@ -17,8 +17,25 @@
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  height: 80vh;
+  overflow-y: scroll;
+}
+.container::-webkit-scrollbar {
+  height: 3px;
+  width: 13px;
 }
 
+Track ::-webkit-scrollbar-track {
+  background: var(--normal-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--normal-blue);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hovered-blue);
+}
 h1 {
   text-align: center;
   color: var(--secondary-hover-text-color);
@@ -27,7 +44,10 @@ h1 {
 }
 .input-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: row;
+
+  gap: 20px;
   margin-bottom: 20px;
 }
 

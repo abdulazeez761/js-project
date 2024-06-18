@@ -1,55 +1,53 @@
 {
-  "participants": [
-    {
-      "id": "1",
-      "level": "1",
-      "name": "Abdulaziz",
-      "result": 85,
-      "totalTime": 120,
-      "correctAnswers": 2,
-      "wrongAnswers": 1,
-      "questions": {
-        "1": { "timeTaken": 0, "status": "" },
-        "2": { "timeTaken": 0, "status": "" },
-        "3": { "timeTaken": 0, "status": "" },
-        "4": { "timeTaken": 0, "status": "" },
-        "5": { "timeTaken": 0, "status": "" },
-        "6": { "timeTaken": 0, "status": "" }
-      }
-    },
-    {
-      "id": "2",
-      "level": "2",
-      "name": "Bilal",
-      "result": 90,
-      "totalTime": 110,
-      "correctAnswers": 3,
-      "wrongAnswers": 0,
-      "questions": {
-        "1": { "timeTaken": 0, "status": "" },
-        "2": { "timeTaken": 0, "status": "" },
-        "3": { "timeTaken": 0, "status": "" },
-        "4": { "timeTaken": 0, "status": "" },
-        "5": { "timeTaken": 0, "status": "" },
-        "6": { "timeTaken": 0, "status": "" }
-      }
-    },
-    {
-      "id": "2",
-      "level": "1",
-      "name": "Bilal",
-      "result": 0,
-      "totalTime": "",
-      "correctAnswers": 0,
-      "wrongAnswers": 0,
-      "questions": {
-        "1": { "timeTaken": 0, "status": "" },
-        "2": { "timeTaken": 0, "status": "" },
-        "3": { "timeTaken": 0, "status": "" },
-        "4": { "timeTaken": 0, "status": "" },
-        "5": { "timeTaken": 0, "status": "" },
-        "6": { "timeTaken": 0, "status": "" }
-      }
+  "1": {
+    "id": "1",
+    "level": "1",
+    "name": "Abdulaziz",
+    "result": 85,
+    "totalTime": 120,
+    "correctAnswers": 2,
+    "wrongAnswers": 1,
+    "questions": {
+      "1": { "timeTaken": 0, "status": "" },
+      "2": { "timeTaken": 0, "status": "" },
+      "3": { "timeTaken": 0, "status": "" },
+      "4": { "timeTaken": 0, "status": "" },
+      "5": { "timeTaken": 0, "status": "" },
+      "6": { "timeTaken": 0, "status": "" }
     }
-  ]
+  },
+  "2": {
+    "id": "2",
+    "level": "2",
+    "name": "Bilal",
+    "result": 90,
+    "totalTime": 110,
+    "correctAnswers": 3,
+    "wrongAnswers": 0,
+    "questions": {
+      "1": { "timeTaken": 0, "status": "" },
+      "2": { "timeTaken": 0, "status": "" },
+      "3": { "timeTaken": 0, "status": "" },
+      "4": { "timeTaken": 0, "status": "" },
+      "5": { "timeTaken": 0, "status": "" },
+      "6": { "timeTaken": 0, "status": "" }
+    }
+  },
+  "3": {
+    "id": "2",
+    "level": "1",
+    "name": "Bilal",
+    "result": 0,
+    "totalTime": "",
+    "correctAnswers": 0,
+    "wrongAnswers": 0,
+    "questions": {
+      "1": { "timeTaken": 0, "status": "" },
+      "2": { "timeTaken": 0, "status": "" },
+      "3": { "timeTaken": 0, "status": "" },
+      "4": { "timeTaken": 0, "status": "" },
+      "5": { "timeTaken": 0, "status": "" },
+      "6": { "timeTaken": 0, "status": "" }
+    }
+  }
 }

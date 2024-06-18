@@ -53,7 +53,6 @@
           >
         </h1>
         <div class="input-container">
-          <input type="text" id="participantId" placeholder="ID" />
           <input type="text" id="participantName" placeholder="Name" />
           <button onclick="addParticipant()">Add</button>
         </div>
@@ -62,49 +61,12 @@
             <tr>
               <th>ID</th>
               <th>Name</th>
-              <th>Reslt</th>
-              <th>Total Time</th>
-              <th>Status</th>
+
               <th>Edit</th>
               <th>Delete</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Abdulziz</td>
-              <td>20/20</td>
-              <td>50m</td>
-              <td>finished</td>
-              <td>
-                <button class="edit-button" onclick="openEditModal(this)">
-                  <i class="fa-solid fa-user-pen"></i>
-                </button>
-              </td>
-              <td>
-                <button class="delete-button" onclick="deleteParticipant(this)">
-                  <i class="fa-solid fa-trash"></i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Abdulziz</td>
-              <td>0/20</td>
-              <td>0</td>
-              <td>testing</td>
-              <td>
-                <button class="edit-button" onclick="openEditModal(this)">
-                  <i class="fa-solid fa-user-pen"></i>
-                </button>
-              </td>
-              <td>
-                <button class="delete-button" onclick="deleteParticipant(this)">
-                  <i class="fa-solid fa-trash"></i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
+          <tbody></tbody>
         </table>
       </div>
 
@@ -112,11 +74,7 @@
         <div class="modal-content">
           <span class="close" onclick="closeEditModal()">&times;</span>
           <h2>Edit Participant</h2>
-          <input
-            type="text"
-            id="editId"
-            class="modal-input"
-            placeholder="New ID" />
+
           <input
             type="text"
             id="editName"
@@ -127,10 +85,10 @@
       </div>
     </div>
     <script src="../../scripts/sidebar.js"></script>
+    <script src="../../../utils/participants.js"></script>
     <script src="../../scripts/participants-level-one.js"></script>
     <script
       src="https://kit.fontawesome.com/5769cd0a63.js"
       crossorigin="anonymous"></script>
-    <script src="../../../utils/add-participants.js"></script>
   </body>
 </html>
