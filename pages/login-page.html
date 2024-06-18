@@ -4,17 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Login</title>
-    <link rel="stylesheet" href="../styles//login.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
   </head>
   <body>
     <div class="login-form" id="loginFormContainer">
       <h2>Admin Login</h2>
       <form id="loginForm">
-        <input type="text" id="username" placeholder="Username" required />
+        <input type="text" id="username" placeholder="email" required />
+        <div id="username-err" style="display: none; color: red"></div>
         <input type="password" id="password" placeholder="Password" required />
-
-        <input onclick="storFormData(event)" type="submit" value="send" />
+        <div id="password-err" style="display: none; color: red"></div>
+        <input type="submit" value="send" />
       </form>
+      <div id="errorMessage" style="color: red; margin-top: 10px"></div>
     </div>
 
     <div id="cardContainer"></div>
