@@ -1,6 +1,40 @@
+const timerElement = document.querySelector('.timer');
+
+let timer;
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
+
+function startTimer() {
+  if (timer) return; // Prevent multiple intervals
+  timer = setInterval(() => {
+    seconds++;
+    if (seconds === 60) {
+      seconds = 0;
+      minutes++;
+    }
+    if (minutes === 60) {
+      minutes = 0;
+      hours++;
+    }
+    timerElement.textContent = `${formatTime(hours)}:${formatTime(
+      minutes
+    )}:${formatTime(seconds)}`;
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timer);
+  timer = null;
+}
+
+function formatTime(time) {
+  return time < 10 ? `0${time}` : time;
+}
+
 let allParticipants = JSON.parse(localStorage.getItem('participants'));
 let participantLevel = allParticipants;
-const participantID = +localStorage.getItem('currentParticipantID');
+const participantID = +localStorage.getItem('loged-in-userID');
 participantLevel = participantLevel[participantID].level;
 participantLevel = participantLevel == 1 ? 'level-one' : 'level-two';
 let levelQuestions = JSON.parse(localStorage.getItem(participantLevel));
@@ -35,6 +69,7 @@ let totalTime;
 function loadFirstQuestion() {
   startTime = new Date();
   totalTime = new Date();
+  startTimer();
   circles.forEach((circle, index) => {
     if (index === questionIndex) {
       circle.classList.add('active');
@@ -95,7 +130,7 @@ const submitAnswer = () => {
     // Show a completion message and redirect
     let endTime = new Date();
     let timeTaken = (endTime - totalTime) / 1000;
-
+    stopTimer();
     let numberOfCUrrectAnswer = 0;
     for (question in currentParticipant.questions) {
       if (currentParticipant.questions[question].correct)
@@ -106,6 +141,7 @@ const submitAnswer = () => {
 
     allParticipants[participantID] = currentParticipant;
     localStorage.setItem('participants', JSON.stringify(allParticipants));
+
     Swal.fire({
       title: 'You have completed all questions!',
       confirmButtonColor: '#3085d6',

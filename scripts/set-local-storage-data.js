@@ -46,7 +46,7 @@ localStorage.setItem(
   'level-one',
   `{
   "levleID": "1",
-  "started": "0",
+  "started": "1",
   "1": {
     "questionContext": "example of the question text",
     "correctAnswers": "300",

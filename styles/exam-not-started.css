@@ -59,6 +59,7 @@ main .btn {
   transition: background-color 0.3s;
   margin-top: 20px;
   margin-right: 50px;
+  border-radius: 2em;
 }
 
 main .btn:hover {

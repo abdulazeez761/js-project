@@ -18,19 +18,18 @@ document.getElementById('Confirm-btn').addEventListener('click', () => {
   let selectedLevel = document
     .getElementById('Confirm-btn')
     .getAttribute('data-level');
-  selectedLevel = selectedLevel == 1 ? 'level-one' : 'level-two';
-  const storedLevel = JSON.parse(localStorage.getItem(`${selectedLevel}`));
-  const checkCompetitionStarted = JSON.parse(
-    localStorage.getItem(`${storedLevel}`)
-  );
-  if (checkCompetitionStarted?.started == 1) {
+  let selectedLevelLocal = selectedLevel == 1 ? 'level-one' : 'level-two';
+  const storedLevel = JSON.parse(localStorage.getItem(`${selectedLevelLocal}`));
+
+  if (storedLevel?.started == 1) {
     const storedUsers = JSON.parse(localStorage.getItem('participants'));
 
     if (
       !userID ||
       !storedUsers[userID] ||
-      storedUsers[userID].level !== selectedLevel
+      storedUsers[userID].level != selectedLevel
     ) {
+      debugger;
       alert('Invalid User ID or Level');
     } else {
       const started = storedLevel.started;
@@ -43,6 +42,6 @@ document.getElementById('Confirm-btn').addEventListener('click', () => {
       window.location.href = dashboardURL;
     }
   } else {
-    alert('The competition has not started');
+    window.location.href = '../pages/exam-not-started.html';
   }
 });
