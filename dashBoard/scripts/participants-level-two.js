@@ -44,6 +44,7 @@ function loadAllParticipants() {
 }
 
 function deleteParticipant(button) {
+  const row = button.parentNode.parentNode;
   const id = button.parentNode.parentNode.children[0].textContent;
 
   Swal.fire({
@@ -57,16 +58,20 @@ function deleteParticipant(button) {
   }).then((result) => {
     if (result.isConfirmed) {
       deleteParticipantFromLocalStorage(id);
+      row.parentNode.removeChild(row);
       Swal.fire({
         title: 'Deleted',
         text: 'Participant has been deleted.',
         icon: 'success',
         confirmButtonColor: '#3085d6',
-      }).then(() => {
-        location.reload();
       });
     } else if (result.dismiss === Swal.DismissReason.cancel) {
-      Swal.fire('Cancelled', 'Participant deletion was cancelled', 'info');
+      Swal.fire({
+        title: 'Cancelled',
+        text: 'Participant deletion was cancelled',
+        icon: 'info',
+        confirmButtonColor: '#3085d6',
+      });
     }
   });
 }

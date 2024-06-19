@@ -54,7 +54,7 @@ function deleteQuestion(button) {
   QID = row.cells[0];
   Swal.fire({
     title: 'Are you sure?',
-    text: 'You will not be able to recover this participant!',
+    text: 'You will not be able to recover this Question!',
     icon: 'warning',
     showCancelButton: true,
     confirmButtonText: 'Yes, delete it!',
@@ -66,12 +66,17 @@ function deleteQuestion(button) {
       row.parentNode.removeChild(row);
       Swal.fire({
         title: 'Deleted',
-        text: 'Participant has been deleted.',
+        text: 'Question has been deleted.',
         icon: 'success',
         confirmButtonColor: '#3085d6',
       });
     } else if (result.dismiss === Swal.DismissReason.cancel) {
-      Swal.fire('Cancelled', 'Participant deletion was cancelled', 'info');
+      Swal.fire({
+        title: 'Question',
+        text: 'Question deletion was cancelled',
+        icon: 'info',
+        confirmButtonColor: '#3085d6',
+      });
     }
   });
 }
