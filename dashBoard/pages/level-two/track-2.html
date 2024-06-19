@@ -11,7 +11,7 @@
     <div class="sidebar">
       <div class="logo">Billimd</div>
       <div class="dropdown">
-        <button class="dropbtn">Level 1</button>
+        <button class="dropbtn">Level 2</button>
         <div class="dropdown-content">
           <button
             id="participants"
@@ -50,59 +50,38 @@
         <h1>
           Mathematics Competition
           <span style="color: var(--normal-blue); margin-left: 10px"
-            >Level 1</span
+            >Level 2</span
           >
         </h1>
         <h3>Competition has <span style="color: red">NOT</span> started yet</h3>
-        <button id="start-comp" class="btn">Start Competition</button>
-        <button id="stop-comp" class="btn">Stop Competition</button>
+        <button id="start-comp" onclick="startComp()" class="btn">
+          Start Competition
+        </button>
+        <button id="stop-comp" onclick="stopComp()" class="btn">
+          Stop Competition
+        </button>
       </div>
       <div class="container">
         <h2>
           Live traking
           <span style="color: var(--normal-blue); margin-left: 10px"
-            >Level 1</span
+            >Level 2</span
           >
         </h2>
         <br />
         <table>
           <thead>
-            <tr>
+            <tr id="table-headers">
               <th>Name</th>
-              <th>Q1</th>
-              <th>Q2</th>
-              <th>Q3</th>
-              <th>Q4</th>
-              <th>Q5</th>
               <th>Total Time</th>
               <th>Mark</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>Abdulziz</td>
-              <td class="right-answer">3:00</td>
-              <td class="right-answer">2:43</td>
-              <td class="wrong-answer">4:02</td>
-              <td class="right-answer">1:55</td>
-              <td class="right-answer">3:33</td>
-              <td>14:33</td>
-              <td>4/5</td>
-            </tr>
-            <tr>
-              <td>Ahmad</td>
-              <td class="right-answer">3:00</td>
-              <td class="wrong-answer">2:43</td>
-              <td class="right-answer">4:02</td>
-              <td class="right-answer">1:55</td>
-              <td class="wrong-answer">3:33</td>
-              <td>14:33</td>
-              <td>3/5</td>
-            </tr>
-          </tbody>
+          <tbody id="participant-results"></tbody>
         </table>
       </div>
     </div>
     <script src="../../scripts/sidebar.js"></script>
+    <script src="../../scripts/track-2.js"></script>
   </body>
 </html>

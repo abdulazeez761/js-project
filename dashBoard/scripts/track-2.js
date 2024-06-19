@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  let questionsData = JSON.parse(localStorage.getItem('level-one') || '{}');
+  let questionsData = JSON.parse(localStorage.getItem('level-two') || '{}');
   let participantsData = JSON.parse(
     localStorage.getItem('participants') || '{}'
   );
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     for (const key in data) {
       const participant = data[key];
-      if (participant.level != '1') continue;
+      if (participant.level != '2') continue;
       const row = document.createElement('tr');
 
       // Create table cells
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setInterval(function () {
     // get the latest version of localStorage to implement live tracking
-    let questionsData = JSON.parse(localStorage.getItem('level-one'));
+    let questionsData = JSON.parse(localStorage.getItem('level-two'));
     let participantsData = JSON.parse(localStorage.getItem('participants'));
 
     if (questionsData && participantsData) {
@@ -105,13 +105,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function startComp() {
-  const questionsData = JSON.parse(localStorage.getItem('level-one') || '{}');
+  const questionsData = JSON.parse(localStorage.getItem('level-two') || '{}');
   questionsData.started = 1;
-  localStorage.setItem('level-one', JSON.stringify(questionsData));
+  localStorage.setItem('level-two', JSON.stringify(questionsData));
 }
 
 function stopComp() {
-  const questionsData = JSON.parse(localStorage.getItem('level-one') || '{}');
+  const questionsData = JSON.parse(localStorage.getItem('level-two') || '{}');
   questionsData.started = 0;
-  localStorage.setItem('level-one', JSON.stringify(questionsData));
+  localStorage.setItem('level-two', JSON.stringify(questionsData));
 }
