@@ -14,16 +14,14 @@ localStorage.setItem(
   "started": "1"
 }
 
-
 `
 );
 localStorage.setItem(
   'level-one',
   `{
   "levleID": "1",
-  "started": "1" 
+  "started": "1"
 }
-
 
 `
 );

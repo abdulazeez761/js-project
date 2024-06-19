@@ -23,11 +23,26 @@ function startTimer() {
   }, 1000);
 }
 
+function formatTimeTaken(timeInSeconds) {
+  const hours = Math.floor(timeInSeconds / 3600);
+  const minutes = Math.floor((timeInSeconds % 3600) / 60);
+  const seconds = Math.floor(timeInSeconds % 60);
+  let formattedTime = '';
+  if (hours > 0) {
+    formattedTime += `${hours}h `;
+  }
+  if (minutes > 0) {
+    formattedTime += `${minutes}m `;
+  }
+  if (seconds > 0 || formattedTime === '') {
+    formattedTime += `${seconds}s`;
+  }
+  return formattedTime.trim();
+}
 function stopTimer() {
   clearInterval(timer);
   timer = null;
 }
-
 function formatTime(time) {
   return time < 10 ? `0${time}` : time;
 }
@@ -105,7 +120,7 @@ const submitAnswer = () => {
   currentParticipant.questions[currentQuestionID] = {
     answer: answer.value,
     correct: correct,
-    timeTaken: timeTaken,
+    timeTaken: formatTimeTaken(timeTaken),
   };
 
   // Save updated participant data
@@ -133,11 +148,11 @@ const submitAnswer = () => {
     let timeTaken = (endTime - totalTime) / 1000;
     stopTimer();
     let numberOfCUrrectAnswer = 0;
-    for (question in currentParticipant.questions) {
+    for (let question in currentParticipant.questions) {
       if (currentParticipant.questions[question].correct)
         ++numberOfCUrrectAnswer;
     }
-    currentParticipant.totalTime = timeTaken;
+    currentParticipant.totalTime = formatTimeTaken(timeTaken);
     currentParticipant.result = `${numberOfCUrrectAnswer}/${numberOfQuestions}`;
 
     allParticipants[participantID] = currentParticipant;
