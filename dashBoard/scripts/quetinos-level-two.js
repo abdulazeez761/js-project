@@ -97,10 +97,10 @@ function closeEditModal() {
 function saveEdit() {
   const newText = document.getElementById('editText').value;
   const newQuestionAnswer = document.getElementById('editAnswer').value;
+  const questionID =+currentEditButton.parentNode.parentNode.children[0].textContent;
   if (currentEditButton && newText && newQuestionAnswer) {
-    currentEditButton.parentNode.parentNode.children[1].textContent = newText;
-    currentEditButton.parentNode.parentNode.children[2].textContent =
-      newQuestionAnswer;
+   updateQuestions(newText,newQuestionAnswer,2,questionID);
+   location.reload();
     closeEditModal();
   }
 }

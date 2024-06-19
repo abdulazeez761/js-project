@@ -99,14 +99,15 @@ function saveEdit() {
   const newQuestionAnswer = document.getElementById('editAnswer').value;
   const questionID =+currentEditButton.parentNode.parentNode.children[0].textContent;
   if (currentEditButton && newText && newQuestionAnswer) {
-    //*fetch all questions using localstorage.getitem('level-one') //in case I was in level two.js we write localstorage.getitem('level-two')
-    //*determine which question to update using allquestions[questionID]
-    //*then we set the old  questino context = newText and we set the old answer = newQuestionAnswer
-    //*then we convert the newallquestoins to string using localstroage.setitem('questions', JSON.stringfy(allquestions))
+   updateQuestions(newText,newQuestionAnswer,1,questionID);
+   location.reload();
     closeEditModal();
   }
 }
-
+//*fetch all questions using localstorage.getitem('level-one') //in case I was in level two.js we write localstorage.getitem('level-two')
+    //*determine which question to update using allquestions[questionID]
+    //*then we set the old  questino context = newText and we set the old answer = newQuestionAnswer
+    //*then we convert the newallquestoins to string using localstroage.setitem('questions', JSON.stringfy(allquestions))
 window.onclick = function (event) {
   if (event.target == document.getElementById('editModal')) {
     closeEditModal();
