@@ -64,32 +64,15 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>Question Context</th>
+              <th>Question</th>
               <th>Answer</th>
-              <th>Time Average</th>
+              <!-- <th>Time Average</th> -->
 
               <th>Edit</th>
               <th>Delete</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>2 + 2 = ?</td>
-              <td>4</td>
-              <td>60m</td>
-              <td>
-                <button class="edit-button" onclick="openEditModal(this)">
-                  <i class="fa-solid fa-user-pen"></i>
-                </button>
-              </td>
-              <td>
-                <button class="delete-button" onclick="deleteQuestion(this)">
-                  <i class="fa-solid fa-trash"></i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
+          <tbody></tbody>
         </table>
       </div>
 
@@ -116,5 +99,8 @@
     <script
       src="https://kit.fontawesome.com/5769cd0a63.js"
       crossorigin="anonymous"></script>
+    <script src="../../../utils/add-question.js"></script>
+    <script src="../../../utils/delete-question.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

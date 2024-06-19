@@ -1,17 +1,25 @@
+const table = document.querySelector('table tbody');
 let currentEditButton;
-
-function addQuestion() {
-  const questionText = document.getElementById('questionContext').value;
-  const questionAnswer = document.getElementById('questionAnswer').value;
-  if (questionText && questionAnswer) {
-    const table = document.querySelector('table tbody');
-    const row = document.createElement('tr');
-
-    row.innerHTML = `
-                    <td>1</td>
-                    <td>${questionText}</td>
-                    <td>${questionAnswer}</td>
-                    <td>0</td>
+//getting local storage level-one data
+let allQuestions = JSON.parse(localStorage.getItem('level-one'));
+//loading all questions
+onload = loadAllQuestios();
+function loadAllQuestios() {
+  //checking if there are any questions in local storage
+  let keys = Object.keys(allQuestions);
+  if (keys.length >= 3) {
+    for (const q in allQuestions) {
+      //skipping the data of "levelID" and "started" keys
+      if (q != 'levleID' && q != 'started') {
+        let qText = allQuestions[q]['questionContext'];
+        let qAnswer = allQuestions[q]['correctAnswers'];
+        //creating a new table row and adding new questions to the table
+        let row = document.createElement('tr');
+        row.innerHTML = `
+                    <td>${q}</td>
+                    <td>${qText}</td>
+                    <td>${qAnswer}</td>
+                    
                   
                      <td>
                 <button class="edit-button" onclick="openEditModal(this)">
@@ -24,13 +32,48 @@ function addQuestion() {
                 </button>
               </td>
                 `;
-    table.appendChild(row);
+        table.appendChild(row);
+
+        console.log(allQuestions[q]['questionContext']);
+      }
+    }
+  }
+}
+function addQuestion() {
+  const questionText = document.getElementById('questionContext').value;
+  const questionAnswer = document.getElementById('questionAnswer').value;
+  if (questionText && questionAnswer) {
+    createQuestions(questionText, questionAnswer, 1);
+    location.reload();
   }
 }
 
 function deleteQuestion(button) {
   const row = button.parentNode.parentNode;
-  row.parentNode.removeChild(row);
+  //getting the question id
+  QID = row.cells[0];
+  Swal.fire({
+    title: 'Are you sure?',
+    text: 'You will not be able to recover this participant!',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Yes, delete it!',
+    cancelButtonText: 'No, keep it',
+    confirmButtonColor: '#fc0102',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      deleteLevelQuestion(1, QID.innerText);
+      row.parentNode.removeChild(row);
+      Swal.fire({
+        title: 'Deleted',
+        text: 'Participant has been deleted.',
+        icon: 'success',
+        confirmButtonColor: '#3085d6',
+      });
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+      Swal.fire('Cancelled', 'Participant deletion was cancelled', 'info');
+    }
+  });
 }
 
 function openEditModal(button) {
