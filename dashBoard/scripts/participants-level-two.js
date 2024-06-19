@@ -62,11 +62,19 @@ function closeEditModal() {
   document.getElementById('editModal').style.display = 'none';
 }
 
+
 function saveEdit() {
   const newName = document.getElementById('editName').value;
   if (currentEditButton && newName) {
-    currentEditButton.parentNode.parentNode.children[1].textContent = newName;
+    let userToUpdateId = +currentEditButton.parentNode.parentNode.children[0].textContent;
+
+    let participant = JSON.parse(localStorage.getItem("participants"));
+    participant[userToUpdateId].name = newName;
+    localStorage.setItem("participants", JSON.stringify(participant));
+    location.reload();
+
     closeEditModal();
+
   }
 }
 
