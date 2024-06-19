@@ -42,11 +42,32 @@ function loadAllParticipants() {
     table.appendChild(row);
   }
 }
-
 function deleteParticipant(button) {
   const id = button.parentNode.parentNode.children[0].textContent;
-  deleteParticipantFromLocalStorage(id);
-  location.reload();
+
+  Swal.fire({
+    title: 'Are you sure?',
+    text: 'You will not be able to recover this participant!',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Yes, delete it!',
+    cancelButtonText: 'No, keep it',
+    confirmButtonColor: '#fc0102',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      deleteParticipantFromLocalStorage(id);
+      Swal.fire({
+        title: 'Deleted',
+        text: 'Participant has been deleted.',
+        icon: 'success',
+        confirmButtonColor: '#3085d6',
+      }).then(() => {
+        location.reload();
+      });
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+      Swal.fire('Cancelled', 'Participant deletion was cancelled', 'info');
+    }
+  });
 }
 
 function openEditModal(button) {
