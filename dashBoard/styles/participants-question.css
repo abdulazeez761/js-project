@@ -5,7 +5,7 @@
   --secondary-background-color: #f9f9f9;
   --secondary-text-color: #6f7175;
   --secondary-hover-text-color: #0a0b0c;
-  --font-family: 'Epilogue', sans-serif;
+  --font-family: "Epilogue", sans-serif;
   --title-font-size: 52px;
   --sidebar-width: 220px;
 }
@@ -81,7 +81,7 @@ table {
 
 td {
   padding: 20px;
-  text-align: left;
+  text-align: center;
 
   border-bottom: 1px solid #ddd;
 }
@@ -107,7 +107,7 @@ th {
 }
 th {
   padding: 20px;
-  text-align: left;
+  text-align: center;
 
   border: none;
 }
