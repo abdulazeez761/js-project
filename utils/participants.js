@@ -1,18 +1,10 @@
 let createParticipants = (level, name) => {
   let participantsLevel = level == 1 ? 'level-one' : 'level-two';
-  let questions = JSON.parse(localStorage.getItem(participantsLevel));
   let allParticipants = JSON.parse(localStorage.getItem('participants'));
   const entries = Object.entries(allParticipants);
 
   let id = entries.length ? +entries[entries.length - 1][0] + 1 : 1;
 
-  let newParticipantQustions = {};
-
-  for (let question in questions) {
-    question !== 'levleID' &&
-      question !== 'started' &&
-      (newParticipantQustions[question] = { timeTaken: 0, status: 0 });
-  }
   let newParticipant = {
     id,
     name,
@@ -21,7 +13,7 @@ let createParticipants = (level, name) => {
     totalTime: 0,
     correctAnswers: 0,
     wrongAnswers: 0,
-    questions: newParticipantQustions,
+    questions: {},
   };
 
   allParticipants[id] = newParticipant;

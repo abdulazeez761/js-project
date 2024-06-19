@@ -93,7 +93,8 @@ const submitAnswer = () => {
     });
   }
 
-  let correct = answer.value == levelQuestions[currentQuestionID].correctAnswer;
+  let correct =
+    +answer.value == +levelQuestions[currentQuestionID].correctAnswers;
   let endTime = new Date();
   let timeTaken = (endTime - startTime) / 1000; // time taken in seconds
 
