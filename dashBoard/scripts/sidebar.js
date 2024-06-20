@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document
     .getElementById(`${currentActiveButtonID}`)
-    .classList.toggle('active');
+    ?.classList.toggle('active');
 
   contentButtons.forEach((button) => {
     button.addEventListener('click', function () {
