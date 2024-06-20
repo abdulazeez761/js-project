@@ -166,3 +166,17 @@ const submitAnswer = () => {
     });
   }
 };
+
+function navigateTo(page) {
+  Swal.fire({
+    title: 'Are you sure you want to leave?',
+    // text: 'you can take the comp ay time ',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Yes!',
+    cancelButtonText: 'No!',
+    confirmButtonColor: '#fc0102',
+  }).then(() => {
+    window.location.href = page;
+  });
+}

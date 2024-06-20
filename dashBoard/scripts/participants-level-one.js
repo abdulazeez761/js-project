@@ -1,7 +1,6 @@
 let currentEditButton;
 
-document.onload(loadAllParticipants());
-
+document.onload = loadAllParticipants();
 function addParticipant() {
   let nameInput = document.getElementById('participantName');
   const name = nameInput.value;
@@ -91,14 +90,14 @@ function closeEditModal() {
 function saveEdit() {
   const newName = document.getElementById('editName').value;
   if (currentEditButton && newName) {
-    let userToUpdateId = +currentEditButton.parentNode.parentNode.children[0].textContent;
-    let participant = JSON.parse(localStorage.getItem("participants"));
+    let userToUpdateId =
+      +currentEditButton.parentNode.parentNode.children[0].textContent;
+    let participant = JSON.parse(localStorage.getItem('participants'));
     participant[userToUpdateId].name = newName;
-    localStorage.setItem("participants", JSON.stringify(participant));
+    localStorage.setItem('participants', JSON.stringify(participant));
     location.reload();
 
     closeEditModal();
-
   }
 }
 window.onclick = function (event) {
