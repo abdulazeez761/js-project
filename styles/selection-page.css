@@ -113,9 +113,14 @@ body {
   background-color: var(--normal-blue);
   color: white;
 }
+.selection-but2 {
+  color: #6f7175;
+}
 .selection-but2:hover {
   background-color: #e6f0ff;
+  color: #4b4c4e;
 }
+
 .selection-but1:hover {
   background-color: var(--hovered-blue);
 }

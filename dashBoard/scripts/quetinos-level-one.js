@@ -3,7 +3,7 @@ let currentEditButton;
 //getting local storage level-one data
 let allQuestions = JSON.parse(localStorage.getItem('level-one'));
 //loading all questions
-onload = loadAllQuestios();
+document.onload = loadAllQuestios();
 function loadAllQuestios() {
   //checking if there are any questions in local storage
   let keys = Object.keys(allQuestions);
@@ -97,17 +97,18 @@ function closeEditModal() {
 function saveEdit() {
   const newText = document.getElementById('editText').value;
   const newQuestionAnswer = document.getElementById('editAnswer').value;
-  const questionID =+currentEditButton.parentNode.parentNode.children[0].textContent;
+  const questionID =
+    +currentEditButton.parentNode.parentNode.children[0].textContent;
   if (currentEditButton && newText && newQuestionAnswer) {
-   updateQuestions(newText,newQuestionAnswer,1,questionID);
-   location.reload();
+    updateQuestions(newText, newQuestionAnswer, 1, questionID);
+    location.reload();
     closeEditModal();
   }
 }
 //*fetch all questions using localstorage.getitem('level-one') //in case I was in level two.js we write localstorage.getitem('level-two')
-    //*determine which question to update using allquestions[questionID]
-    //*then we set the old  questino context = newText and we set the old answer = newQuestionAnswer
-    //*then we convert the newallquestoins to string using localstroage.setitem('questions', JSON.stringfy(allquestions))
+//*determine which question to update using allquestions[questionID]
+//*then we set the old  questino context = newText and we set the old answer = newQuestionAnswer
+//*then we convert the newallquestoins to string using localstroage.setitem('questions', JSON.stringfy(allquestions))
 window.onclick = function (event) {
   if (event.target == document.getElementById('editModal')) {
     closeEditModal();

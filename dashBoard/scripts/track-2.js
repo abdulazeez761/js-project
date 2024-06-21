@@ -11,10 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     const newHeaders = [];
+    let questionIndex = 1; // for counting number of quesionts and show them as 1 ->n insted of showing the id
     for (const questionId in questions) {
-      if (questionId !== 'levleID' && questionId !== 'started') {
-        newHeaders.push(`Q${questionId}`, `Time Q${questionId}`);
+      if (questionId != 'levleID' && questionId != 'started') {
+        newHeaders.push(`Q${questionIndex}`, `Time Q${questionIndex}`);
       }
+      questionIndex++;
     }
 
     // Check if headers need to be updated
