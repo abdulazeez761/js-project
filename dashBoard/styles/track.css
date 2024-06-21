@@ -9,27 +9,33 @@
   --title-font-size: 52px;
   --sidebar-width: 220px;
 }
+.track-buttons{
+  display: flex;
+  justify-content: center;
+  gap:20px;
+
+}
 .btn {
-  padding: 15px 60px;
-  border-radius: 30px;
+  padding: 15px 30px;
+  border-radius: 15px;
   background-color: var(--normal-blue);
   color: #fff;
   border: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 14px;
   transition: background-color 0.3s;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 #stop-comp {
-  padding: 15px 60px;
-  border-radius: 30px;
+  padding: 15px 30px;
+  border-radius: 15px;
   background-color: red;
   color: #fff;
   border: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 14px;
   transition: background-color 0.3s;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 #start-comp:hover {
@@ -46,22 +52,31 @@
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  margin-bottom: 20px;
-  overflow: auto; /* Ensure the container can scroll if content overflows */
+  margin-bottom: 10px;
+  overflow: scroll; /* Ensure the container can scroll if content overflows */
 }
 
 h1 {
   text-align: center;
   color: var(--secondary-hover-text-color);
-  font-size: var(--title-font-size);
-  margin-bottom: 40px;
+  font-size: 32px;
 }
-
+h3 {
+  margin-top: 10px;
+}
+#table-container {
+  overflow: scroll;
+  height: 59vh;
+}
+#table-container {
+  overflow: scroll;
+  height: 90vh;
+}
 table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0px 20px;
-  overflow: auto; /* Add overflow for scrolling */
+  overflow: scroll; /* Add overflow for scrolling */
   max-height: 400px; /* Set a maximum height for scroll */
 }
 

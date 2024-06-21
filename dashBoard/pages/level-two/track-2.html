@@ -47,22 +47,27 @@
       </div>
     </div>
     <div class="content">
-      <div class="container">
+      <div id="header-container" class="container">
         <h1>
           Mathematics Competition
           <span style="color: var(--normal-blue); margin-left: 10px"
             >Level 2</span
           >
         </h1>
-        <h3>Competition has <span style="color: red">NOT</span> started yet</h3>
-        <button id="start-comp" onclick="startComp()" class="btn">
+        <h3 class="track-text">
+          Competition has
+          <span style="color: red">NOT</span> started yet
+        </h3>
+        <div class="track-buttons"> 
+          <button id="start-comp" onclick="startComp()" class="btn">
           Start Competition
         </button>
         <button id="stop-comp" onclick="stopComp()" class="btn">
           Stop Competition
-        </button>
+        </button></div>
+       
       </div>
-      <div class="container">
+      <div id="table-container" class="container">
         <h2>
           Live traking
           <span style="color: var(--normal-blue); margin-left: 10px"
@@ -70,6 +75,7 @@
           >
         </h2>
         <br />
+    
         <table>
           <thead>
             <tr id="table-headers">
