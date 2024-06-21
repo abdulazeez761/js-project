@@ -107,12 +107,23 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function startComp() {
+  document.querySelector('.track-text').innerHTML = `
+  Competition has
+  <span style="color: green">Started</span>
+`;
   const questionsData = JSON.parse(localStorage.getItem('level-two') || '{}');
   questionsData.started = 1;
   localStorage.setItem('level-two', JSON.stringify(questionsData));
+  
+    
+ 
 }
 
 function stopComp() {
+  document.querySelector('.track-text').innerHTML = `
+  Competition has been
+  <span style="color: red">Stopped</span> 
+`;
   const questionsData = JSON.parse(localStorage.getItem('level-two') || '{}');
   questionsData.started = 0;
   localStorage.setItem('level-two', JSON.stringify(questionsData));

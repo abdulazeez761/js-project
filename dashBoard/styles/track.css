@@ -9,27 +9,33 @@
   --title-font-size: 52px;
   --sidebar-width: 220px;
 }
+.track-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
 .btn {
   padding: 15px 30px;
-  border-radius: 30px;
+  border-radius: 15px;
   background-color: var(--normal-blue);
   color: #fff;
   border: none;
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 #stop-comp {
   padding: 15px 30px;
-  border-radius: 30px;
+  border-radius: 15px;
   background-color: red;
   color: #fff;
   border: none;
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 #start-comp:hover {
@@ -64,7 +70,7 @@ h3 {
 }
 #table-container {
   overflow: scroll;
-  height: 57vh;
+  height: 75%;
 }
 table {
   width: 100%;
