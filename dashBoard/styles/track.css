@@ -9,12 +9,12 @@
   --title-font-size: 52px;
   --sidebar-width: 220px;
 }
-.track-buttons{
+.track-buttons {
   display: flex;
   justify-content: center;
-  gap:20px;
-
+  gap: 20px;
 }
+
 .btn {
   padding: 15px 30px;
   border-radius: 15px;
@@ -70,7 +70,7 @@ h3 {
 }
 #table-container {
   overflow: scroll;
-  height: 90vh;
+  height: 75%;
 }
 table {
   width: 100%;
