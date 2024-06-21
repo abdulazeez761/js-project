@@ -154,7 +154,7 @@ const submitAnswer = () => {
     }
     currentParticipant.totalTime = formatTimeTaken(timeTaken);
     currentParticipant.result = `${numberOfCUrrectAnswer}/${numberOfQuestions}`;
-
+    currentParticipant.correctAnswers = numberOfCUrrectAnswer;
     allParticipants[participantID] = currentParticipant;
     localStorage.setItem('participants', JSON.stringify(allParticipants));
 
@@ -176,7 +176,7 @@ function navigateTo(page) {
     confirmButtonText: 'Yes!',
     cancelButtonText: 'No!',
     confirmButtonColor: '#fc0102',
-  }).then(() => {
-    window.location.href = page;
+  }).then((result) => {
+    if (result.isConfirmed) window.location.href = page;
   });
 }

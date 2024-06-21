@@ -61,6 +61,7 @@ header .hamburger span {
     align-items: flex-start;
     align-content: center;
     justify-content: space-between;
+    text-align: center;
     position: relative;
   }
 
@@ -69,6 +70,8 @@ header .hamburger span {
     gap: 20px;
     display: none;
     opacity: 0;
+    gap: 100px;
+    text-align: center;
   }
 
   .active {
@@ -76,12 +79,13 @@ header .hamburger span {
     position: absolute;
     left: 50%;
     padding-top: 20px;
-    gap: 30px;
+    gap: 70px;
     top: 100%;
     opacity: 1;
+    text-align: center;
   }
   header .logo {
-    font-size: 27px;
+    font-size: 20px;
     font-weight: bold;
   }
   header .hamburger {
@@ -92,7 +96,7 @@ header .hamburger span {
     transition: height 0.3s ease;
   }
   .active-header {
-    height: 50%;
+    height: 33%;
     transition: height 0.3s ease;
   }
 }
