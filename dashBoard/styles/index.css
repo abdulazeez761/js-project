@@ -1,0 +1,153 @@
+.section {
+  background-color: var(--secondary-background-color);
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  padding: 50px 30px;
+  gap: 15px;
+}
+
+.content {
+  width: 100%;
+  padding: 0;
+}
+.container {
+  margin: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  margin: auto;
+}
+.chart-numbers {
+  margin: 20px 0px;
+  /*  */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.numbers-card {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  justify-content: space-between;
+  align-items: start;
+  gap: 5px;
+  /* border-radius: 10px; */
+  background-color: var(--background-color);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.numbers-card span {
+  font-weight: bold;
+  color: var(--normal-blue);
+  font-size: 13px;
+}
+.numbers-card p {
+  color: var(--secondary-text-color);
+  /* font-weight: bold; */
+  font-size: 12px;
+}
+
+h6 {
+  color: var(--secondary-text-color);
+}
+.bar {
+  height: 3px;
+  background-color: red;
+  /* border-radius: 10px; */
+  width: 70%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span {
+  font-family: var(--font-family);
+}
+.leaderboard {
+  position: relative;
+  top: -50px;
+  background-color: var(--background-color);
+  gap: 10px;
+  width: 300px;
+  height: 310px;
+  /* border-radius: 10px; */
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.card-banner {
+  background: radial-gradient(
+    circle at 12.3% 19.3%,
+    rgb(85, 88, 218) 0%,
+    rgb(95, 209, 249) 100.2%
+  );
+  height: 150px;
+  /* border-radius: 10px 10px 0 0; */
+  color: white;
+  text-align: center;
+}
+.card-banner h2 {
+  position: relative;
+
+  top: 40%;
+}
+.card-body {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  overflow-y: scroll;
+  padding: 10px;
+  font-weight: bold;
+}
+.card-body::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 10px;
+  background-clip: padding-box;
+}
+.card::-webkit-scrollbar:hover {
+  width: 50px;
+}
+Track ::-webkit-scrollbar-track {
+  background: var(--normal-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--normal-blue);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hovered-blue);
+}
+.card-body .name {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  gap: 20px;
+}
+.card-body .name:hover {
+  cursor: pointer;
+  border-bottom: solid var(--normal-blue);
+}
+#chartContainer {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+@media (max-width: 1110px) {
+  .section {
+    flex-direction: column-reverse;
+  }
+  .leaderboard {
+    /* width: 300px; */
+    top: 0;
+  }
+  .name {
+    justify-content: center;
+    align-items: center;
+  }
+}
