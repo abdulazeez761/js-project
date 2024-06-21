@@ -24,7 +24,7 @@ body {
 .sidebar {
   width: var(--sidebar-width);
   background-color: var(--normal-blue);
-  height: 100vh;
+  height: 110vh;
   padding: 20px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   transition: width 0.3s ease-in-out;

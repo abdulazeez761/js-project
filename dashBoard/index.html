@@ -4,7 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sidebar with Dropdown</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../styles/root.css" />
     <link rel="stylesheet" href="./styles/sidebar.css" />
+    <link rel="stylesheet" href="styles/index.css" />
   </head>
   <body>
     <div class="sidebar">
@@ -14,17 +23,20 @@
         <div class="dropdown-content">
           <button
             id="participants"
-            onclick="navigateTo('./pages/level-one/participants.html')">
+            onclick="navigateTo('./pages/level-one/participants.html')"
+          >
             Participants
           </button>
           <button
             id="questions"
-            onclick="navigateTo('./pages/level-one/questions.html')">
+            onclick="navigateTo('./pages/level-one/questions.html')"
+          >
             Questions
           </button>
           <button
             id="track"
-            onclick="navigateTo('./pages/level-one/track.html')">
+            onclick="navigateTo('./pages/level-one/track.html')"
+          >
             Track
           </button>
         </div>
@@ -34,28 +46,131 @@
         <div class="dropdown-content">
           <button
             id="participants-2"
-            onclick="navigateTo('./pages/level-two/participants-2.html')">
+            onclick="navigateTo('./pages/level-two/participants-2.html')"
+          >
             Participants
           </button>
           <button
             id="questions-2"
-            onclick="navigateTo('./pages/level-two/questions-2.html')">
+            onclick="navigateTo('./pages/level-two/questions-2.html')"
+          >
             Questions
           </button>
           <button
             id="track-2"
-            onclick="navigateTo('./pages/level-two/track-2.html')">
+            onclick="navigateTo('./pages/level-two/track-2.html')"
+          >
             Track
           </button>
         </div>
       </div>
     </div>
     <div class="content">
-      <h1>
-        Tracking page will be the index page of the dashboard because it has
-        live trakcin
-      </h1>
+      <div class="section">
+        <div class="container chart-container">
+          <div id="chartContainer1" style="height: 300px; width: 500px"></div>
+          <div class="chart-numbers">
+            <div class="numbers-card">
+              <h6>Hardest question</h6>
+              <p>Question: <span id="lvl1-easiest">9</span></p>
+              <p>wrong answers: <span style="color: red">20</span></p>
+              <div class="bar"></div>
+            </div>
+            <div class="numbers-card">
+              <h6>Eazsiest question</h6>
+              <p>Question: <span id="lvl1-easiest">9</span></p>
+              <p>right answers: <span style="color: lime">30</span></p>
+              <div class="bar" style="background-color: lime"></div>
+            </div>
+            <div class="numbers-card">
+              <h6>Longest question</h6>
+              <p>
+                Question:
+                <span id="lvl1-easiest">9</span>
+              </p>
+              <p>avg time: <span style="color: #ffd700">05:00</span></p>
+              <div class="bar" style="background-color: #ffd700"></div>
+            </div>
+          </div>
+        </div>
+        <div class="container leaderboard">
+          <div class="card-banner"><h2>Leaderboard 1</h2></div>
+          <div class="card-body">
+            <div class="participants"></div>
+            <div class="name">
+              <span
+                ><i class="fa-solid fa-medal" style="color: #ffd700"></i></span
+              >Bilal
+            </div>
+            <div class="name">
+              <span
+                ><i class="fa-solid fa-medal" style="color: #c0c0c0"></i></span
+              >Abdulaziz
+            </div>
+            <div class="name">
+              <span
+                ><i class="fa-solid fa-medal" style="color: #cd7f32"></i></span
+              >Wisal
+            </div>
+            <div class="name"><span>4.</span>Ahmad</div>
+            <div class="name"><span>5.</span>Yaser</div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="container chart-container">
+          <div id="chartContainer2" style="height: 300px; width: 500px"></div>
+          <div class="chart-numbers">
+            <div class="numbers-card">
+              <h6>Hardest question</h6>
+              <p>Question: <span id="lvl1-easiest">9</span></p>
+              <p>wrong answers: <span style="color: red">20</span></p>
+              <div class="bar"></div>
+            </div>
+            <div class="numbers-card">
+              <h6>Eazsiest question</h6>
+              <p>Question: <span id="lvl1-easiest">9</span></p>
+              <p>right answers: <span style="color: lime">30</span></p>
+              <div class="bar" style="background-color: lime"></div>
+            </div>
+            <div class="numbers-card">
+              <h6>Longest question</h6>
+              <p>
+                Question:
+                <span id="lvl1-easiest">9</span>
+              </p>
+              <p>avg time: <span style="color: #ffd700">05:00</span></p>
+              <div class="bar" style="background-color: #ffd700"></div>
+            </div>
+          </div>
+        </div>
+        <div class="container leaderboard">
+          <div class="card-banner"><h2>Leaderboard 2</h2></div>
+          <div class="card-body">
+            <div class="participants"></div>
+            <div class="name">
+              <span
+                ><i class="fa-solid fa-medal" style="color: #ffd700"></i></span
+              >Bilal
+            </div>
+            <div class="name">
+              <span
+                ><i class="fa-solid fa-medal" style="color: #c0c0c0"></i></span
+              >Abdulaziz
+            </div>
+            <div class="name">
+              <span
+                ><i class="fa-solid fa-medal" style="color: #cd7f32"></i></span
+              >Wisal
+            </div>
+            <div class="name"><span>4.</span>Ahmad</div>
+            <div class="name"><span>5.</span>Yaser</div>
+          </div>
+        </div>
+      </div>
     </div>
+    <script src="scripts/index.js"></script>
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     <script src="./scripts/sidebar.js"></script>
     <script src="../utils/difficult-question.js"></script>
   </body>
