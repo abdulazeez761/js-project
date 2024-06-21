@@ -13,12 +13,16 @@
     <div class="screen-blur" id="screen-blur">
       <div class="enter-id-card">
         <h3>Enter your ID</h3>
-        <input type="text" name="enter-id-input" placeholder="your id" id="user-id" />
+        <input
+          type="text"
+          name="enter-id-input"
+          placeholder="your id"
+          id="user-id" />
         <div class="enter-id-buttons">
           <button class="selection-but1" id="Confirm-btn">Confirm</button>
           <button class="selection-but2" id="cancel-btn">Cancel</button>
         </div>
-        <div style="display: none;"></div>
+        <div style="display: none"></div>
       </div>
     </div>
     <header id="nav-header">
@@ -58,8 +62,18 @@
               Total question time is 1 hour.
             </p>
             <div class="selection-buttons">
-              <button class="selection-btn selection-but1" data-level="1">Level One</button>
-              <button class="selection-btn selection-but2" data-level="2">Level Two</button>
+              <button
+                onclick="enterIDPopUp(1)"
+                class="selection-btn selection-but1"
+                data-level="1">
+                Level One
+              </button>
+              <button
+                onclick="enterIDPopUp(2)"
+                class="selection-btn selection-but2"
+                data-level="2">
+                Level Two
+              </button>
             </div>
           </div>
         </div>
@@ -110,5 +124,6 @@
     <script src="/scripts/nav.js"></script>
     <script src="../scripts/popup-card.js"></script>
     <script src="../utils/difficult-question.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

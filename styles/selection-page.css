@@ -106,6 +106,8 @@ body {
   border: 1px solid rgb(78, 163, 237);
   cursor: pointer;
   transition: background-color 0.3s;
+  font-weight: bolder;
+  font-size: 14px;
 }
 .selection-but1 {
   background-color: var(--normal-blue);
