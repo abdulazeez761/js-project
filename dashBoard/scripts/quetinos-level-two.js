@@ -3,7 +3,7 @@ let currentEditButton;
 //getting local storage level-one data
 let allQuestions = JSON.parse(localStorage.getItem('level-two'));
 //loading all questions
-onload = loadAllQuestios();
+document.onload = loadAllQuestios();
 function loadAllQuestios() {
   //checking if there are any questions in local storage
   let keys = Object.keys(allQuestions);
@@ -97,10 +97,11 @@ function closeEditModal() {
 function saveEdit() {
   const newText = document.getElementById('editText').value;
   const newQuestionAnswer = document.getElementById('editAnswer').value;
-  const questionID =+currentEditButton.parentNode.parentNode.children[0].textContent;
+  const questionID =
+    +currentEditButton.parentNode.parentNode.children[0].textContent;
   if (currentEditButton && newText && newQuestionAnswer) {
-   updateQuestions(newText,newQuestionAnswer,2,questionID);
-   location.reload();
+    updateQuestions(newText, newQuestionAnswer, 2, questionID);
+    location.reload();
     closeEditModal();
   }
 }
