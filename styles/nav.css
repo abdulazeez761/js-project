@@ -28,7 +28,7 @@ header .logo {
 header nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 40px;
   transition: all 0.3s ease;
 }
 
