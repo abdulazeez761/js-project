@@ -105,29 +105,3 @@ window.onclick = function (event) {
     closeEditModal();
   }
 };
-
-// function loadMostRecentParticipant() {
-//   let participants = JSON.parse(localStorage.getItem('paticipants'));
-//   let mostRecentID = Object.keys(participants).length;
-//   console.log(participants);
-//   let mostRecentParticipant = participants[mostRecentID];
-
-//   const table = document.querySelector('table tbody');
-//   const row = document.createElement('tr');
-//   row.innerHTML = `
-//                       <td>${mostRecentParticipant.id}</td>
-//                       <td>${mostRecentParticipant.name}</td>
-
-//                       <td>
-//                   <button class="edit-button" onclick="openEditModal(this)">
-//                     <i class="fa-solid fa-user-pen"></i>
-//                   </button>
-//                 </td>
-//                 <td>
-//                   <button class="delete-button" onclick="deleteParticipant(this)">
-//                     <i class="fa-solid fa-trash"></i>
-//                   </button>
-//                 </td>
-//                   `;
-//   table.appendChild(row);
-// }

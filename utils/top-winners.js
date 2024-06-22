@@ -29,13 +29,15 @@ function parseTime(timeStr) {
 
 // Sort participants based on criteria
 function sortParticipants(participants) {
-  const validParticipants = Object.values(participants).filter((participant) => {
-    if (!participant.totalTime || participant.totalTime == '') {
-      const totalTimeInSeconds = calculateTotalTime(participant.questions);
-      participant.totalTime = totalTimeInSeconds.toString() + 's';
+  const validParticipants = Object.values(participants).filter(
+    (participant) => {
+      if (!participant.totalTime || participant.totalTime == '') {
+        const totalTimeInSeconds = calculateTotalTime(participant.questions);
+        participant.totalTime = totalTimeInSeconds.toString() + 's';
+      }
+      return participant.totalTime != '' && participant.level == '2';
     }
-    return participant.totalTime != '' && participant.level == '2';
-  });
+  );
 
   validParticipants.sort((a, b) => {
     if (a.correctAnswers != b.correctAnswers) {
@@ -49,4 +51,3 @@ function sortParticipants(participants) {
 
 // Sort participants and log them
 const sortedParticipants = sortParticipants(participants);
-console.log('Sorted Participants:', sortedParticipants);

@@ -3,8 +3,6 @@ window.onload = function () {
   let levelOne = numberOfCorrectAnswerForEachQuestion(1);
   let levelTwo = numberOfCorrectAnswerForEachQuestion(2);
 
-  // console.log('level one: ', levelOne, '\nlevel two: ', levelTwo);
-
   function generateDataPoints(levelData, type) {
     let dataPoints = [];
     let index = 1;
@@ -148,4 +146,38 @@ window.onload = function () {
     chart1.render();
     chart2.render();
   }
+  let hardest = analyzeQuestions();
+
+  //hardestQuestion for both level one and two
+  document.getElementById('lvl1-hardest-id').innerText =
+    hardest.mostWrongQuestionIdLevel1;
+  document.getElementById('lvl1-hardest-count').innerText =
+    hardest.maxWrongCountLevel1;
+  document.getElementById('lvl2-hardest-id').innerText =
+    hardest.mostWrongQuestionIdLevel2;
+  document.getElementById('lvl2-hardest-count').innerText =
+    hardest.maxWrongCountLevel2;
+  //most easy
+  document.getElementById('lvl1-easiest-id').innerText =
+    hardest.mostCorrectQuestionIdLevel1;
+  document.getElementById('lvl1-easiest-count').innerText =
+    hardest.maxCorrectCountLevel1;
+  document.getElementById('lvl2-easiest-id').innerText =
+    hardest.mostCorrectQuestionIdLevel2;
+  document.getElementById('lvl2-easiest-count').innerText =
+    hardest.maxCorrectCountLevel2;
+
+  //longest question
+  let {
+    longestTime: longestTimeLvl1,
+    longestQuestionId: longestQuestionIdLvl1,
+  } = logestQuestion(1);
+  let {
+    longestTime: longestTimeLvl2,
+    longestQuestionId: longestQuestionIdLvl2,
+  } = logestQuestion(2);
+  document.getElementById('lvl1-longest-id').innerText = longestQuestionIdLvl1;
+  document.getElementById('lvl1-longest-time').innerText = longestTimeLvl1;
+  document.getElementById('lvl2-longest-id').innerText = longestQuestionIdLvl2;
+  document.getElementById('lvl2-longest-time').innerText = longestTimeLvl2;
 };

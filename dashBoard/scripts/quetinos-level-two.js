@@ -33,8 +33,6 @@ function loadAllQuestios() {
               </td>
                 `;
         table.appendChild(row);
-
-        console.log(allQuestions[q]['questionContext']);
       }
     }
   }
