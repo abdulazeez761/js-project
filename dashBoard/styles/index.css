@@ -80,7 +80,7 @@ span {
   /* border-radius: 10px; */
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
-.card-banner {
+.leaderboard-banner {
   background: radial-gradient(
     circle at 12.3% 19.3%,
     rgb(85, 88, 218) 0%,
@@ -91,13 +91,13 @@ span {
   color: white;
   text-align: center;
 }
-.card-banner h2 {
+.leaderboard-banner h2 {
   position: relative;
 
   top: 40%;
 }
-.card-body {
-  justify-content: center;
+.leaderboard-body {
+  justify-content: space-around;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -106,12 +106,12 @@ span {
   padding: 10px;
   font-weight: bold;
 }
-.card-body::-webkit-scrollbar {
+.leaderboard-body::-webkit-scrollbar {
   width: 8px;
   border-radius: 10px;
   background-clip: padding-box;
 }
-.card::-webkit-scrollbar:hover {
+.leaderboard::-webkit-scrollbar:hover {
   width: 50px;
 }
 Track ::-webkit-scrollbar-track {
@@ -125,13 +125,13 @@ Track ::-webkit-scrollbar-track {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--hovered-blue);
 }
-.card-body .name {
+.leaderboard-body .name {
   display: flex;
   justify-content: start;
   width: 100%;
   gap: 20px;
 }
-.card-body .name:hover {
+.leaderboard-body .name:hover {
   cursor: pointer;
   border-bottom: solid var(--normal-blue);
 }

@@ -177,4 +177,8 @@ window.onload = function () {
     chart1.render();
     chart2.render();
   }
+  const leaderboard1 = leaderboard(1);
+  const leaderboard2 = leaderboard(2);
+  appendleaderboard(leaderboard1, "leaderboard1");
+  appendleaderboard(leaderboard2, "leaderboard2");
 };
