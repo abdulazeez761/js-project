@@ -41,8 +41,12 @@ body {
   margin-bottom: 20px;
   color: rgb(255, 255, 255);
   text-align: left;
+  transition: color 0.3s ease-in-out;
 }
-
+.logo:hover {
+  color: #244864;
+  cursor: pointer;
+}
 .dropdown {
   position: relative;
   display: block;

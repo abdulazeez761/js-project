@@ -180,4 +180,11 @@ window.onload = function () {
   document.getElementById('lvl1-longest-time').innerText = longestTimeLvl1;
   document.getElementById('lvl2-longest-id').innerText = longestQuestionIdLvl2;
   document.getElementById('lvl2-longest-time').innerText = longestTimeLvl2;
+
+  //leaderboard function
+  const leaderboard1 = leaderboard(1);
+  const leaderboard2 = leaderboard(2);
+  console.log(leaderboard2);
+  appendleaderboard(leaderboard1, 'leaderboard1');
+  appendleaderboard(leaderboard2, 'leaderboard2');
 };

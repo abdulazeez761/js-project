@@ -9,7 +9,9 @@
   </head>
   <body>
     <div class="sidebar">
-      <div class="logo">MathMastery</div>
+      <div class="logo" onclick="navigateTo('../../index.html')">
+        MathMastery
+      </div>
       <div class="dropdown">
         <button class="dropbtn">Level 1</button>
         <div class="dropdown-content">
@@ -51,7 +53,9 @@
             >Level 1</span
           >
         </h1>
-        <h3 class="track-text" >Competition has <span style="color: red">NOT</span> started yet</h3>
+        <h3 class="track-text">
+          Competition has <span style="color: red">NOT</span> started yet
+        </h3>
         <div class="track-buttons">
           <button id="start-comp" onclick="startComp()" class="btn">
             Start Competition
@@ -60,7 +64,6 @@
             Stop Competition
           </button>
         </div>
-      
       </div>
       <div id="table-container" class="container">
         <h2>

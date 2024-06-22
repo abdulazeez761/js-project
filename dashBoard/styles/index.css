@@ -1,153 +1,149 @@
-.section {
-  background-color: var(--secondary-background-color);
-  display: flex;
-  flex-direction: row;
-  /* flex-wrap: wrap; */
-  align-items: center;
-  align-content: center;
-  justify-content: space-between;
-  padding: 50px 30px;
-  gap: 15px;
+:root {
+  --background-color: #ffffff;
+  --secondary-background-color: #f9f9f9;
+  --primary-color: #379ae6;
+  --secondary-color: #5fd1f9;
+  --text-color: #333333;
+  --secondary-text-color: #666666;
+  --highlight-color: #ffd700;
+  --error-color: #ff4d4d;
+  --success-color: #4caf50;
+  --font-family: 'Arial', sans-serif;
 }
 
-.content {
+.section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 30px;
+  gap: 20px;
   width: 100%;
-  padding: 0;
+  height: auto;
 }
+
 .container {
   margin: 5px;
   text-align: center;
   display: flex;
-  justify-content: start;
   flex-direction: column;
-  margin: auto;
+  width: 100%;
+  max-width: 500px;
 }
+
+.chart-container {
+  width: 100%;
+}
+
 .chart-numbers {
-  margin: 20px 0px;
-  /*  */
+  margin: 20px 0;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
+
 .numbers-card {
-  width: 160px;
+  flex: 1;
+  min-width: 150px;
   display: flex;
   flex-direction: column;
-  padding: 5px;
-  justify-content: space-between;
-  align-items: start;
-  gap: 5px;
-  border-radius: 10px;
+  padding: 10px;
   background-color: var(--background-color);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin: 5px;
+  border-radius: 10px;
 }
+
 .numbers-card span {
   font-weight: bold;
-  color: var(--normal-blue);
-  font-size: 13px;
+  color: var(--primary-color);
+  font-size: 14px;
 }
+
 .numbers-card p {
   color: var(--secondary-text-color);
-  /* font-weight: bold; */
   font-size: 12px;
 }
 
 h6 {
   color: var(--secondary-text-color);
+  font-size: 14px;
+  margin: 0 0 10px;
 }
+
 .bar {
-  height: 3px;
-  background-color: red;
-  border-radius: 10px;
-  width: 70%;
+  height: 5px;
+  width: 100%;
+  border-radius: 5px;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-span {
-  font-family: var(--font-family);
-}
+
 .leaderboard {
-  position: relative;
-  top: -50px;
   background-color: var(--background-color);
-  gap: 10px;
-  width: 300px;
-  height: 310px;
-  border-radius: 10px;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin: 10px 0;
+  border-radius: 10px;
 }
-.card-banner {
+
+.leaderboard-banner {
   background: radial-gradient(
     circle at 12.3% 19.3%,
-    rgb(85, 88, 218) 0%,
-    rgb(95, 209, 249) 100.2%
+    var(--primary-color) 0%,
+    var(--secondary-color) 100.2%
   );
-  height: 150px;
-  /* border-radius: 10px 10px 0 0; */
+  height: 100px;
+  border-radius: 10px 10px 0 0;
   color: white;
   text-align: center;
-}
-.card-banner h2 {
-  position: relative;
-
-  top: 40%;
-}
-.card-body {
+  display: flex;
+  align-items: center;
   justify-content: center;
+}
+
+.leaderboard-body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  overflow-y: scroll;
+  gap: 10px;
   padding: 10px;
-  font-weight: bold;
+  overflow-y: auto;
+  max-height: 150px;
 }
-.card-body::-webkit-scrollbar {
+
+.leaderboard-body::-webkit-scrollbar {
   width: 8px;
-  border-radius: 10px;
-  background-clip: padding-box;
-}
-.card::-webkit-scrollbar:hover {
-  width: 50px;
-}
-Track ::-webkit-scrollbar-track {
-  background: var(--normal-blue);
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--normal-blue);
+.leaderboard-body::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+.leaderboard-body::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--hovered-blue);
-}
-.card-body .name {
+.leaderboard-body .name {
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   width: 100%;
-  gap: 20px;
-}
-.card-body .name:hover {
+  padding: 5px;
   cursor: pointer;
-  border-bottom: solid var(--normal-blue);
+  transition: background-color 0.3s;
 }
-#chartContainer {
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+.leaderboard-body .name:hover {
+  background-color: var(--secondary-background-color);
+  border-radius: 5px;
 }
-@media (max-width: 1110px) {
+
+@media (max-width: 768px) {
   .section {
-    flex-direction: column-reverse;
-  }
-  .leaderboard {
-    /* width: 300px; */
-    top: 0;
-  }
-  .name {
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
   }
 }

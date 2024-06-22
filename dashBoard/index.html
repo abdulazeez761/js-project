@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidebar with Dropdown</title>
     <link
       rel="stylesheet"
@@ -16,7 +16,7 @@
   </head>
   <body>
     <div class="sidebar">
-      <div class="logo">MathMastery</div>
+      <div class="logo" onclick="navigateTo('../dashBoard/index.html')">MathMastery</div>
       <div class="dropdown">
         <button class="dropbtn">Level 1</button>
         <div class="dropdown-content">
@@ -70,7 +70,7 @@
                 wrong answers:
                 <span id="lvl1-hardest-count" style="color: red">20</span>
               </p>
-              <div class="bar"></div>
+              <div class="bar" style="background-color: red"></div>
             </div>
             <div class="numbers-card">
               <h6>Eazsiest question</h6>
@@ -96,27 +96,9 @@
           </div>
         </div>
         <div class="container leaderboard">
-          <div class="card-banner"><h2>Leaderboard 1</h2></div>
-          <div class="card-body">
-            <div class="participants"></div>
-            <div class="name">
-              <span
-                ><i class="fa-solid fa-medal" style="color: #ffd700"></i></span
-              >Bilal
-            </div>
-            <div class="name">
-              <span
-                ><i class="fa-solid fa-medal" style="color: #c0c0c0"></i></span
-              >Abdulaziz
-            </div>
-            <div class="name">
-              <span
-                ><i class="fa-solid fa-medal" style="color: #cd7f32"></i></span
-              >Wisal
-            </div>
-            <div class="name"><span>4.</span>Ahmad</div>
-            <div class="name"><span>5.</span>Yaser</div>
-          </div>
+          <div class="leaderboard-banner"><h2>Leaderboard 1</h2></div>
+           <div class="leaderboard-body" id="leaderboard1">
+          
         </div>
       </div>
       <div class="section">
@@ -130,7 +112,7 @@
                 wrong answers:
                 <span id="lvl2-hardest-count" style="color: red"></span>
               </p>
-              <div class="bar"></div>
+              <div class="bar" style="background-color: red"></div>
             </div>
             <div class="numbers-card">
               <h6>Eazsiest question</h6>
@@ -156,27 +138,8 @@
           </div>
         </div>
         <div class="container leaderboard">
-          <div class="card-banner"><h2>Leaderboard 2</h2></div>
-          <div class="card-body">
-            <div class="participants"></div>
-            <div class="name">
-              <span
-                ><i class="fa-solid fa-medal" style="color: #ffd700"></i></span
-              >Bilal
-            </div>
-            <div class="name">
-              <span
-                ><i class="fa-solid fa-medal" style="color: #c0c0c0"></i></span
-              >Abdulaziz
-            </div>
-            <div class="name">
-              <span
-                ><i class="fa-solid fa-medal" style="color: #cd7f32"></i></span
-              >Wisal
-            </div>
-            <div class="name"><span>4.</span>Ahmad</div>
-            <div class="name"><span>5.</span>Yaser</div>
-          </div>
+          <div class="leaderboard-banner"><h2>Leaderboard 2</h2></div>
+          <div class="leaderboard-body" id="leaderboard2"></div>
         </div>
       </div>
     </div>
@@ -184,5 +147,7 @@
     <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     <script src="./scripts/sidebar.js"></script>
     <script src="../utils/questions-analysis.js"></script>
+    <script src="../utils/top-winners.js"></script>
+    <script src="../utils/append-leaderboard.js"></script>
   </body>
 </html>
