@@ -8,7 +8,6 @@
   --highlight-color: #ffd700;
   --error-color: #ff4d4d;
   --success-color: #4caf50;
-  --font-family: 'Arial', sans-serif;
 }
 
 .section {
@@ -16,7 +15,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 30px;
   gap: 20px;
   width: 100%;
