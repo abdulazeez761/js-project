@@ -81,3 +81,47 @@ function difficultQuestion() {
 
 // Call the function
 difficultQuestion();
+
+function numberOfCorrectAnswerForEachQuestion(level) {
+  // Determine the level key based on the input level
+  let localStorageLevel = level == 1 ? 'level-one' : 'level-two';
+
+  // Initialize the result object
+  let questionsAndNumberOfCorrectAnswers = {};
+
+  // Retrieve questions and participants data from localStorage
+  let questions = JSON.parse(localStorage.getItem(localStorageLevel));
+  let participants = JSON.parse(localStorage.getItem('participants'));
+
+  // Make sure that we have questions and participants data before calculating
+  if (questions && participants && Object.keys(questions).length > 2) {
+    // Initialize each question in the result object
+    for (const question in questions) {
+      if (question != 'levleID' && question != 'started') {
+        questionsAndNumberOfCorrectAnswers[question] = {
+          correct: 0,
+          wrong: 0,
+        };
+      }
+    }
+
+    // Iterate through each participant to count the correct and wrong answers
+    for (const participantId in participants) {
+      let participantAnswers = participants[participantId].questions;
+      for (const question in participantAnswers) {
+        if (participants[participantId].level == level) {
+          // Ensure the question exists in the questionsAndNumberOfCorrectAnswers object
+          if (questionsAndNumberOfCorrectAnswers.hasOwnProperty(question)) {
+            if (participantAnswers[question].correct) {
+              questionsAndNumberOfCorrectAnswers[question].correct++;
+            } else {
+              questionsAndNumberOfCorrectAnswers[question].wrong++;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return questionsAndNumberOfCorrectAnswers;
+}

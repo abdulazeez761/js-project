@@ -1,9 +1,31 @@
 window.onload = function () {
-  var chart1 = new CanvasJS.Chart("chartContainer1", {
+  // Example usage
+  let levelOne = numberOfCorrectAnswerForEachQuestion(1);
+  let levelTwo = numberOfCorrectAnswerForEachQuestion(2);
+
+  // console.log('level one: ', levelOne, '\nlevel two: ', levelTwo);
+
+  function generateDataPoints(levelData, type) {
+    let dataPoints = [];
+    let index = 1;
+    for (let question in levelData) {
+      if (levelData.hasOwnProperty(question)) {
+        let value = levelData[question][type];
+        dataPoints.push({
+          label: `q${index++}`,
+          y: value,
+          color: type === 'correct' ? '#379ae6' : 'red',
+        });
+      }
+    }
+    return dataPoints;
+  }
+
+  var chart1 = new CanvasJS.Chart('chartContainer1', {
     animationEnabled: true,
     title: {
-      text: "Level one",
-      textColor: "#379ae6",
+      text: 'Level one',
+      textColor: '#379ae6',
     },
     axisX: {
       // lineThickness: 0,
@@ -12,12 +34,12 @@ window.onload = function () {
     },
     axisY: {
       // title: "Billions of Barrels",
-      color: "#379ae6",
+      color: '#379ae6',
       maximum: 50,
-      titleFontColor: "#379ae6",
-      lineColor: "#379ae6",
-      labelFontColor: "#379ae6",
-      tickColor: "#379ae6",
+      titleFontColor: '#379ae6',
+      lineColor: '#379ae6',
+      labelFontColor: '#379ae6',
+      tickColor: '#379ae6',
     },
     axisY2: {
       // title: "Millions of Barrels/day",
@@ -25,69 +47,44 @@ window.onload = function () {
       lineThickness: 0,
       tickThickness: 0,
       // valueFormatString: " ", //space
-      titleFontColor: "red",
-      lineColor: "red",
-      labelFontColor: "red",
-      tickColor: "red",
+      titleFontColor: 'red',
+      lineColor: 'red',
+      labelFontColor: 'red',
+      tickColor: 'red',
     },
     toolTip: {
       shared: true,
     },
     legend: {
-      cursor: "pointer",
+      cursor: 'pointer',
       itemclick: toggleDataSeries,
     },
     data: [
       {
-        type: "column",
-        name: "right answers ",
-        legendText: "right answers",
+        type: 'column',
+        name: 'right answers',
+        legendText: 'right answers',
         showInLegend: true,
-        dataPoints: [
-          { label: "q1", y: 13, color: "#379ae6" },
-          { label: "q2", y: 24, color: "#379ae6" },
-          { label: "q3", y: 19, color: "#379ae6" },
-          { label: "q4", y: 33, color: "#379ae6" },
-          { label: "q5", y: 27, color: "#379ae6" },
-          { label: "q6", y: 44, color: "#379ae6" },
-          { label: "q7", y: 9, color: "#379ae6" },
-          { label: "q8", y: 22, color: "#379ae6" },
-          { label: "q9", y: 37, color: "#379ae6" },
-          { label: "q10", y: 15, color: "#379ae6" },
-          { label: "q11", y: 22, color: "#379ae6" },
-          { label: "q12", y: 38, color: "#379ae6" },
-        ],
+        dataPoints: generateDataPoints(levelOne, 'correct'),
       },
-
       {
-        type: "column",
-        name: "wrong answers",
-        legendText: "wrong answers",
-        axisYType: "secondary",
+        type: 'column',
+        name: 'wrong answers',
+        legendText: 'wrong answers',
+        axisYType: 'secondary',
         showInLegend: true,
-        dataPoints: [
-          { label: "q1", y: 10, color: "red" },
-          { label: "q2", y: 2, color: "red" },
-          { label: "q3", y: 3, color: "red" },
-          { label: "q4", y: 4, color: "red" },
-          { label: "q5", y: 7, color: "red" },
-          { label: "q6", y: 31, color: "red" },
-          { label: "q7", y: 10, color: "red" },
-          { label: "q8", y: 8, color: "red" },
-          { label: "q9", y: 11, color: "red" },
-          { label: "q10", y: 17, color: "red" },
-          { label: "q11", y: 21, color: "red" },
-          { label: "q12", y: 18, color: "red" },
-        ],
+        dataPoints: generateDataPoints(levelOne, 'wrong'),
       },
     ],
   });
+
   chart1.render();
-  var chart2 = new CanvasJS.Chart("chartContainer2", {
+
+  var chart2 = new CanvasJS.Chart('chartContainer2', {
     animationEnabled: true,
     title: {
-      text: "Level one",
-      textColor: "#379ae6",
+      text: 'Level two',
+      textColor: '#379ae6',
     },
     axisX: {
       // lineThickness: 0,
@@ -96,12 +93,12 @@ window.onload = function () {
     },
     axisY: {
       // title: "Billions of Barrels",
-      color: "#379ae6",
+      color: '#379ae6',
       maximum: 50,
-      titleFontColor: "#379ae6",
-      lineColor: "#379ae6",
-      labelFontColor: "#379ae6",
-      tickColor: "#379ae6",
+      titleFontColor: '#379ae6',
+      lineColor: '#379ae6',
+      labelFontColor: '#379ae6',
+      tickColor: '#379ae6',
     },
     axisY2: {
       // title: "Millions of Barrels/day",
@@ -109,67 +106,41 @@ window.onload = function () {
       lineThickness: 0,
       tickThickness: 0,
       // valueFormatString: " ", //space
-      titleFontColor: "red",
-      lineColor: "red",
-      labelFontColor: "red",
-      tickColor: "red",
+      titleFontColor: 'red',
+      lineColor: 'red',
+      labelFontColor: 'red',
+      tickColor: 'red',
     },
     toolTip: {
       shared: true,
     },
     legend: {
-      cursor: "pointer",
+      cursor: 'pointer',
       itemclick: toggleDataSeries,
     },
     data: [
       {
-        type: "column",
-        name: "right answers ",
-        legendText: "right answers",
+        type: 'column',
+        name: 'right answers',
+        legendText: 'right answers',
         showInLegend: true,
-        dataPoints: [
-          { label: "q1", y: 13, color: "#379ae6" },
-          { label: "q2", y: 24, color: "#379ae6" },
-          { label: "q3", y: 19, color: "#379ae6" },
-          { label: "q4", y: 33, color: "#379ae6" },
-          { label: "q5", y: 27, color: "#379ae6" },
-          { label: "q6", y: 44, color: "#379ae6" },
-          { label: "q7", y: 9, color: "#379ae6" },
-          { label: "q8", y: 22, color: "#379ae6" },
-          { label: "q9", y: 37, color: "#379ae6" },
-          { label: "q10", y: 15, color: "#379ae6" },
-          { label: "q11", y: 22, color: "#379ae6" },
-          { label: "q12", y: 38, color: "#379ae6" },
-        ],
+        dataPoints: generateDataPoints(levelTwo, 'correct'),
       },
-
       {
-        type: "column",
-        name: "wrong answers",
-        legendText: "wrong answers",
-        axisYType: "secondary",
+        type: 'column',
+        name: 'wrong answers',
+        legendText: 'wrong answers',
+        axisYType: 'secondary',
         showInLegend: true,
-        dataPoints: [
-          { label: "q1", y: 10, color: "red" },
-          { label: "q2", y: 2, color: "red" },
-          { label: "q3", y: 3, color: "red" },
-          { label: "q4", y: 4, color: "red" },
-          { label: "q5", y: 7, color: "red" },
-          { label: "q6", y: 31, color: "red" },
-          { label: "q7", y: 10, color: "red" },
-          { label: "q8", y: 8, color: "red" },
-          { label: "q9", y: 11, color: "red" },
-          { label: "q10", y: 17, color: "red" },
-          { label: "q11", y: 21, color: "red" },
-          { label: "q12", y: 18, color: "red" },
-        ],
+        dataPoints: generateDataPoints(levelTwo, 'wrong'),
       },
     ],
   });
+
   chart2.render();
 
   function toggleDataSeries(e) {
-    if (typeof e.dataSeries.visible === "undefined" || e.dataSeries.visible) {
+    if (typeof e.dataSeries.visible === 'undefined' || e.dataSeries.visible) {
       e.dataSeries.visible = false;
     } else {
       e.dataSeries.visible = true;
