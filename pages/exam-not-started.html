@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/root.css" />
+    <link rel="stylesheet" href="../styles/nav.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/exam-not-started.css" />
+    <title>not started</title>
+  </head>
+  <body>
+    <header id="nav-header">
+      <div class="container">
+        <div class="logo" onclick="navigateTo('../../index.html')">
+          MathMastery
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="./faq.html">FAQs</a></li>
+            <li><a href="./selectionpage.html">Levels</a></li>
+            <li><a href="./login-page.html">Login</a></li>
+          </ul>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="exam-alert">
+          <h1>Exam has Not started yet</h1>
+          <div>
+            <button class="btn" onclick="navigateTo('./selectionpage.html')">
+              Try Again
+            </button>
+            <button
+              onclick="navigateTo('../index.html')"
+              class="btn btn-secondary">
+              Leave
+            </button>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="../assets/images/wating.jpg" alt="wating Image" />
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="social-media">
+          <a href="#"
+            ><img src="../assets/images/twitter.png" alt="Twitter"
+          /></a>
+          <a href="#"
+            ><img src="../assets/images/facebook.png" alt="Facebook"
+          /></a>
+          <a href="#"
+            ><img src="../assets/images/linkedin.png" alt="LinkedIn"
+          /></a>
+          <a href="#"
+            ><img src="../assets/images/youtube.png" alt="YouTube"
+          /></a>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-logo">
+            <span>MathMastery</span>
+          </div>
+        </div>
+        <hr />
+        <div class="footer-info">
+          <span
+            >© 2022 Brand, Inc. • <a href="#">Privacy</a> •
+            <a href="#">Terms</a> • <a href="#">Sitemap</a></span
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="/scripts/nav.js"></script>
+    <script src="../utils/navigateTo.js"></script>
+  </body>
+</html>
