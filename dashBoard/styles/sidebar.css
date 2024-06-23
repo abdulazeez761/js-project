@@ -85,7 +85,8 @@ body {
   padding: 10px 0;
 }
 
-.dropdown-content button {
+.dropdown-content button,
+.log-out {
   color: white;
   padding: 10px;
   text-decoration: none;
@@ -99,13 +100,21 @@ body {
   font-weight: bold;
 }
 
-.dropdown-content button:hover {
+.dropdown-content button:hover,
+.log-out:hover {
   color: var(--secondary-hover-text-color);
   background-color: var(--hovered-blue);
   color: rgb(221, 221, 221);
   cursor: pointer;
 }
-
+.log-out {
+  position: fixed;
+  bottom: 2%;
+  width: 15%;
+  z-index: 111;
+  font-weight: bold;
+  font-size: 20px;
+}
 .dropdown.active .dropdown-content {
   display: block;
   opacity: 1;
@@ -130,9 +139,11 @@ button.active {
 /*  */
 div.backBtn {
   width: 100px;
-  background-color: #f4f4f4;
+  background-color: transparent;
   transition: all 0.4s ease;
   position: relative;
+  left: 86%;
+  padding-bottom: 50px;
   cursor: pointer;
 }
 
@@ -143,7 +154,7 @@ span.line {
   left: auto;
   background-color: #379ae6;
   border-radius: 10px;
-  width: 100%;
+  width: 90%;
   left: 0px;
   height: 2px;
   display: block;
@@ -169,7 +180,7 @@ span.bLine {
   position: absolute;
   left: 0px;
   top: 5px;
-  width: 100%;
+  width: 90%;
   text-align: center;
   transition: all 0.4s ease;
   font-size: 1em;
