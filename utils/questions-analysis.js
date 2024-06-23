@@ -175,21 +175,7 @@ function logestQuestion(lvl) {
   // Fetch participants from localStorage
   const jsonData = localStorage.getItem('participants');
   const participants = JSON.parse(jsonData) || {}; // Default to an empty object if jsonData is null
-  let longestTime = 0;
-  let longestQuestionId = null;
 
-  // Calculate the total time taken for all questions
-  function calculateTotalTime(questions) {
-    let totalTime = 0;
-    for (const key in questions) {
-      const timeStr = questions[key].timeTaken;
-      const timeInSeconds = parseTime(timeStr);
-      totalTime += timeInSeconds;
-    }
-    return totalTime;
-  }
-
-  // Parse a time string (e.g., "2h", "30m", "45s") into seconds
   function parseTime(timeStr) {
     if (timeStr.endsWith('s')) {
       return parseInt(timeStr.replace('s', ''), 10);
@@ -203,21 +189,40 @@ function logestQuestion(lvl) {
     return 0; // Default to 0 if no valid unit is found
   }
 
-  // Loop through participants to find the longest question
+  let questionTimes = {};
+
+  // Aggregate time taken for each question
   for (let participantId in participants) {
-    const participant = participants[participantId];
-    if (participant.level == lvl) {
-      const totalTime = calculateTotalTime(participant.questions);
-      if (totalTime > longestTime) {
-        longestTime = totalTime;
-        longestQuestionId = participantId;
+    if (participants[participantId].level == lvl) {
+      for (let questionId in participants[participantId].questions) {
+        let questionData = participants[participantId].questions[questionId];
+        let timeTaken = parseTime(questionData.timeTaken);
+
+        if (!questionTimes[questionId]) {
+          questionTimes[questionId] = { totalTime: 0, count: 0 };
+        }
+
+        questionTimes[questionId].totalTime += timeTaken;
+        questionTimes[questionId].count++;
       }
     }
   }
 
-  // Return the result outside the loop
+  // Calculate average time for each question and determine the highest average
+  let highestAverageQuestion = { averageTime: 0, id: 0 };
+
+  for (let questionId in questionTimes) {
+    let averageTime =
+      questionTimes[questionId].totalTime / questionTimes[questionId].count;
+
+    if (averageTime > highestAverageQuestion.averageTime) {
+      highestAverageQuestion.averageTime = averageTime;
+      highestAverageQuestion.id = questionId;
+    }
+  }
+
   return {
-    longestTime: formatTimeTaken(longestTime),
-    longestQuestionId,
+    longestTime: formatTimeTaken(highestAverageQuestion.averageTime),
+    longestQuestionId: highestAverageQuestion.id,
   };
 }

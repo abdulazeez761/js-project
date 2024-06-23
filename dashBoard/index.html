@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sidebar with Dropdown</title>
     <link
       rel="stylesheet"
@@ -16,7 +16,9 @@
   </head>
   <body>
     <div class="sidebar">
-      <div class="logo" onclick="navigateTo('../dashBoard/index.html')">MathMastery</div>
+      <div class="logo" onclick="navigateTo('../dashBoard/index.html')">
+        MathMastery
+      </div>
       <div class="dropdown">
         <button class="dropbtn">Level 1</button>
         <div class="dropdown-content">
@@ -58,6 +60,7 @@
         </div>
       </div>
     </div>
+
     <div class="content">
       <div class="section">
         <div class="container chart-container">
@@ -97,52 +100,54 @@
         </div>
         <div class="container leaderboard">
           <div class="leaderboard-banner"><h2>Leaderboard 1</h2></div>
-           <div class="leaderboard-body" id="leaderboard1">
-          
+          <div class="leaderboard-body" id="leaderboard1"></div>
         </div>
-      </div>
-      <div class="section">
-        <div class="container chart-container">
-          <div id="chartContainer2" style="height: 300px; width: 500px"></div>
-          <div class="chart-numbers">
-            <div class="numbers-card">
-              <h6>Hardest question</h6>
-              <p>Question: <span id="lvl2-hardest-id">9</span></p>
-              <p>
-                wrong answers:
-                <span id="lvl2-hardest-count" style="color: red"></span>
-              </p>
-              <div class="bar" style="background-color: red"></div>
-            </div>
-            <div class="numbers-card">
-              <h6>Eazsiest question</h6>
-              <p>Question: <span id="lvl2-easiest-id">9</span></p>
-              <p>
-                right answers:
-                <span id="lvl2-easiest-count" style="color: lime">30</span>
-              </p>
-              <div class="bar" style="background-color: lime"></div>
-            </div>
-            <div class="numbers-card">
-              <h6>Longest question</h6>
-              <p>
-                Question:
-                <span id="lvl2-longest-id">9</span>
-              </p>
-              <p>
-                avg time:
-                <span id="lvl2-longest-time" style="color: #ffd700">05:00</span>
-              </p>
-              <div class="bar" style="background-color: #ffd700"></div>
+        <div class="section">
+          <div class="container chart-container">
+            <div id="chartContainer2" style="height: 300px; width: 500px"></div>
+            <div class="chart-numbers">
+              <div class="numbers-card">
+                <h6>Hardest question</h6>
+                <p>Question: <span id="lvl2-hardest-id">9</span></p>
+                <p>
+                  wrong answers:
+                  <span id="lvl2-hardest-count" style="color: red"></span>
+                </p>
+                <div class="bar" style="background-color: red"></div>
+              </div>
+              <div class="numbers-card">
+                <h6>Eazsiest question</h6>
+                <p>Question: <span id="lvl2-easiest-id">9</span></p>
+                <p>
+                  right answers:
+                  <span id="lvl2-easiest-count" style="color: lime">30</span>
+                </p>
+                <div class="bar" style="background-color: lime"></div>
+              </div>
+              <div class="numbers-card">
+                <h6>Longest question</h6>
+                <p>
+                  Question:
+                  <span id="lvl2-longest-id">9</span>
+                </p>
+                <p>
+                  avg time:
+                  <span id="lvl2-longest-time" style="color: #ffd700"
+                    >05:00</span
+                  >
+                </p>
+                <div class="bar" style="background-color: #ffd700"></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="container leaderboard">
-          <div class="leaderboard-banner"><h2>Leaderboard 2</h2></div>
-          <div class="leaderboard-body" id="leaderboard2"></div>
+          <div class="container leaderboard">
+            <div class="leaderboard-banner"><h2>Leaderboard 2</h2></div>
+            <div class="leaderboard-body" id="leaderboard2"></div>
+          </div>
         </div>
       </div>
     </div>
+
     <script src="scripts/index.js"></script>
     <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     <script src="./scripts/sidebar.js"></script>
