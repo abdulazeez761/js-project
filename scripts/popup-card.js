@@ -1,55 +1,3 @@
-// const levelButtons = document.querySelectorAll('.selection-btn');
-// levelButtons.forEach((button) => {
-//   button.addEventListener('click', () => {
-//     document.getElementById('screen-blur').style.display = 'block';
-//     const selectedLevel = button.getAttribute('data-level');
-//     document
-//       .getElementById('Confirm-btn')
-//       .setAttribute('data-level', selectedLevel);
-//   });
-// });
-
-// document.getElementById('cancel-btn').addEventListener('click', () => {
-//   document.getElementById('screen-blur').style.display = 'none';
-// });
-
-// document.getElementById('Confirm-btn').addEventListener('click', () => {
-//   const userID = document.getElementById('user-id').value;
-//   let selectedLevel = document
-//     .getElementById('Confirm-btn')
-//     .getAttribute('data-level');
-//   let selectedLevelLocal = selectedLevel == 1 ? 'level-one' : 'level-two';
-//   const storedLevel = JSON.parse(localStorage.getItem(`${selectedLevelLocal}`));
-
-//   if (storedLevel?.started == 1) {
-//     const storedUsers = JSON.parse(localStorage.getItem('participants'));
-
-//     if (
-//       !userID ||
-//       !storedUsers[userID] ||
-//       storedUsers[userID].level != selectedLevel
-//     ) {
-//       Swal.fire({
-//         title: 'Valid ID',
-//         text: 'pleas enter a valid id',
-//         icon: 'info',
-//         confirmButtonColor: '#3085d6',
-//       });
-//     } else {
-//       const started = storedLevel.started;
-//       localStorage.setItem('loged-in-userID', userID);
-//       localStorage.setItem('loged-in-user-level', selectedLevel);
-//       const dashboardURL =
-//         started == 1
-//           ? `../pages/question-page.html`
-//           : `../pages/question-page.html`;
-//       window.location.href = dashboardURL;
-//     }
-//   } else {
-//     window.location.href = '../pages/exam-not-started.html';
-//   }
-// });
-
 function enterIDPopUp(Level) {
   // Display a popup using Swal.fire with a title, input field, and buttons
   Swal.fire({
@@ -104,7 +52,13 @@ function enterIDPopUp(Level) {
         }
       } else {
         // Redirect to the exam-not-started page if the level has not started
-        window.location.href = '../pages/exam-not-started.html';
+        // window.location.href = '../pages/exam-not-started.html';
+        Swal.fire({
+          title: 'exam has not started', // Title of the info popup
+          text: 'try again later', // Text of the info popup
+          icon: 'error', // Icon type
+          confirmButtonColor: '#3085d6', // Color of the confirm button
+        });
       }
     }
   });
