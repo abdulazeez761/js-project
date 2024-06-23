@@ -25,10 +25,6 @@
   width: 13px;
 }
 
-Track ::-webkit-scrollbar-track {
-  background: var(--normal-blue);
-}
-
 ::-webkit-scrollbar-thumb {
   background: var(--normal-blue);
 }

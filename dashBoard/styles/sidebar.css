@@ -110,7 +110,7 @@ body {
 .log-out {
   position: fixed;
   bottom: 0%;
-  width: 15%;
+  width: 200px;
   z-index: 111;
   font-weight: bold;
   font-size: 20px;
