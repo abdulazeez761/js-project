@@ -74,7 +74,7 @@ h3 {
 table {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 0px 20px;
+  border-spacing: 0px 4px;
   overflow: scroll; /* Add overflow for scrolling */
   max-height: 400px; /* Set a maximum height for scroll */
 }
@@ -105,18 +105,20 @@ Track ::-webkit-scrollbar-track {
   background: var(--hovered-blue);
 }
 td {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .right-answer {
   background-color: green;
   border-left: solid 1px;
   border-right: solid 1px;
+  color: var(--secondary-background-color);
 }
 .wrong-answer {
   background-color: red;
   border-left: solid 1px;
   border-right: solid 1px;
+  color: var(--secondary-background-color);
 }
 .not-solved {
   background-color: rgb(219, 219, 219);

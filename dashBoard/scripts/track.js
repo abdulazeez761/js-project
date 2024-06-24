@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let questionIndex = 1; // for counting number of quesionts and show them as 1 ->n insted of showing the id
     for (const questionId in questions) {
       if (questionId != 'levleID' && questionId != 'started') {
-        newHeaders.push(`Q${questionIndex}`, `Time Q${questionIndex}`);
+        newHeaders.push(`Q${questionIndex}`);
       }
       questionIndex++;
     }
@@ -60,16 +60,16 @@ document.addEventListener('DOMContentLoaded', () => {
           const timeCell = document.createElement('td');
           const question = participant.questions[questionId];
 
-          questionCell.textContent = question ? question.answer : 'N/A';
+          questionCell.textContent = question ? question.timeTaken : 'N/A';
           questionCell.className = question
             ? question.correct
               ? 'right-answer'
               : 'wrong-answer'
             : 'not-solved';
-          timeCell.textContent = question ? question.timeTaken : 'N/A';
+          // timeCell.textContent = question ? question.timeTaken : 'N/A';
 
           row.appendChild(questionCell);
-          row.appendChild(timeCell);
+          // row.appendChild(timeCell);
         }
       }
 
