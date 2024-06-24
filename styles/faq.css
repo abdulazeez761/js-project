@@ -26,12 +26,15 @@ section {
 .titleQ {
   text-align: center;
   font-size: 50px;
+  position: relative;
+  left: 13%;
+  bottom: 10%;
 }
 .faq {
   max-width: 700px;
   margin-top: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid green;
+  border-bottom: 2px solid #197dca;
   cursor: pointer;
   align-items: center;
 }

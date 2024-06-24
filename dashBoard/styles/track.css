@@ -76,7 +76,7 @@ table {
   border-collapse: separate;
   border-spacing: 0px 4px;
   overflow: scroll; /* Add overflow for scrolling */
-  max-height: 400px; /* Set a maximum height for scroll */
+  max-height: 500px; /* Set a maximum height for scroll */
 }
 
 /* thead {

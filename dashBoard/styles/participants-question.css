@@ -112,21 +112,22 @@ th {
   cursor: pointer;
   padding: 5px 10px;
   border: none;
+  font-size: 16px;
   border-radius: 4px;
 }
 .edit-button {
-  background-color: var(--normal-blue);
-  color: white;
+  background-color: transparent;
+  color: var(--normal-blue);
 }
 .edit-button:hover {
-  background-color: var(--hovered-blue);
+  color: var(--hovered-blue);
 }
 .delete-button {
-  background-color: #dc3545;
-  color: white;
+  background-color: transparent;
+  color: #dc3545;
 }
 .delete-button:hover {
-  background-color: #800713;
+  color: #91000e;
 }
 /* Modal styles */
 .modal {

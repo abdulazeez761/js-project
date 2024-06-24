@@ -24,7 +24,10 @@ header .logo {
   font-size: 39px;
   font-weight: bold;
 }
-
+header .logo img {
+  position: absolute;
+  top: 0%;
+}
 header nav ul {
   list-style: none;
   display: flex;
