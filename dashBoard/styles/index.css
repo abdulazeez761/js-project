@@ -9,7 +9,9 @@
   --error-color: #ff4d4d;
   --success-color: #4caf50;
 }
-
+body {
+  background-color: var(--secondary-background-color);
+}
 .section {
   display: flex;
   flex-direction: row;
@@ -29,6 +31,8 @@
   flex-direction: column;
   width: 100%;
   max-width: 500px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 15px;
 }
 
 .chart-container {
