@@ -12,18 +12,18 @@ window.onload = function () {
         dataPoints.push({
           label: `q${index++}`,
           y: value,
-          color: type === "correct" ? "#379ae6" : "red",
+          color: type === 'correct' ? '#379ae6' : 'red',
         });
       }
     }
     return dataPoints;
   }
 
-  var chart1 = new CanvasJS.Chart("chartContainer1", {
+  var chart1 = new CanvasJS.Chart('chartContainer1', {
     animationEnabled: true,
     title: {
-      text: "Level one",
-      textColor: "#379ae6",
+      text: 'Level one',
+      textColor: '#379ae6',
     },
     axisX: {
       // lineThickness: 0,
@@ -32,12 +32,12 @@ window.onload = function () {
     },
     axisY: {
       // title: "Billions of Barrels",
-      color: "#379ae6",
+      color: '#379ae6',
       maximum: 20,
-      titleFontColor: "#379ae6",
-      lineColor: "#379ae6",
-      labelFontColor: "#379ae6",
-      tickColor: "#379ae6",
+      titleFontColor: '#379ae6',
+      lineColor: '#379ae6',
+      labelFontColor: '#379ae6',
+      tickColor: '#379ae6',
     },
     axisY2: {
       // title: "Millions of Barrels/day",
@@ -45,44 +45,44 @@ window.onload = function () {
       lineThickness: 0,
       tickThickness: 0,
       // valueFormatString: " ", //space
-      titleFontColor: "red",
-      lineColor: "red",
-      labelFontColor: "red",
-      tickColor: "red",
+      titleFontColor: 'red',
+      lineColor: 'red',
+      labelFontColor: 'red',
+      tickColor: 'red',
     },
     toolTip: {
       shared: true,
     },
     legend: {
-      cursor: "pointer",
+      cursor: 'pointer',
       itemclick: toggleDataSeries,
     },
     data: [
       {
-        type: "column",
-        name: "right answers",
-        legendText: "right answers",
+        type: 'column',
+        name: 'right answers',
+        legendText: 'right answers',
         showInLegend: true,
-        dataPoints: generateDataPoints(levelOne, "correct"),
+        dataPoints: generateDataPoints(levelOne, 'correct'),
       },
       {
-        type: "column",
-        name: "wrong answers",
-        legendText: "wrong answers",
-        axisYType: "secondary",
+        type: 'column',
+        name: 'wrong answers',
+        legendText: 'wrong answers',
+        axisYType: 'secondary',
         showInLegend: true,
-        dataPoints: generateDataPoints(levelOne, "wrong"),
+        dataPoints: generateDataPoints(levelOne, 'wrong'),
       },
     ],
   });
 
   chart1.render();
 
-  var chart2 = new CanvasJS.Chart("chartContainer2", {
+  var chart2 = new CanvasJS.Chart('chartContainer2', {
     animationEnabled: true,
     title: {
-      text: "Level two",
-      textColor: "#379ae6",
+      text: 'Level two',
+      textColor: '#379ae6',
     },
     axisX: {
       // lineThickness: 0,
@@ -91,12 +91,12 @@ window.onload = function () {
     },
     axisY: {
       // title: "Billions of Barrels",
-      color: "#379ae6",
+      color: '#379ae6',
       maximum: 50,
-      titleFontColor: "#379ae6",
-      lineColor: "#379ae6",
-      labelFontColor: "#379ae6",
-      tickColor: "#379ae6",
+      titleFontColor: '#379ae6',
+      lineColor: '#379ae6',
+      labelFontColor: '#379ae6',
+      tickColor: '#379ae6',
     },
     axisY2: {
       // title: "Millions of Barrels/day",
@@ -104,33 +104,33 @@ window.onload = function () {
       lineThickness: 0,
       tickThickness: 0,
       // valueFormatString: " ", //space
-      titleFontColor: "red",
-      lineColor: "red",
-      labelFontColor: "red",
-      tickColor: "red",
+      titleFontColor: 'red',
+      lineColor: 'red',
+      labelFontColor: 'red',
+      tickColor: 'red',
     },
     toolTip: {
       shared: true,
     },
     legend: {
-      cursor: "pointer",
+      cursor: 'pointer',
       itemclick: toggleDataSeries,
     },
     data: [
       {
-        type: "column",
-        name: "right answers",
-        legendText: "right answers",
+        type: 'column',
+        name: 'right answers',
+        legendText: 'right answers',
         showInLegend: true,
-        dataPoints: generateDataPoints(levelTwo, "correct"),
+        dataPoints: generateDataPoints(levelTwo, 'correct'),
       },
       {
-        type: "column",
-        name: "wrong answers",
-        legendText: "wrong answers",
-        axisYType: "secondary",
+        type: 'column',
+        name: 'wrong answers',
+        legendText: 'wrong answers',
+        axisYType: 'secondary',
         showInLegend: true,
-        dataPoints: generateDataPoints(levelTwo, "wrong"),
+        dataPoints: generateDataPoints(levelTwo, 'wrong'),
       },
     ],
   });
@@ -138,7 +138,7 @@ window.onload = function () {
   chart2.render();
 
   function toggleDataSeries(e) {
-    if (typeof e.dataSeries.visible === "undefined" || e.dataSeries.visible) {
+    if (typeof e.dataSeries.visible === 'undefined' || e.dataSeries.visible) {
       e.dataSeries.visible = false;
     } else {
       e.dataSeries.visible = true;
@@ -149,22 +149,22 @@ window.onload = function () {
   let hardest = analyzeQuestions();
 
   //hardestQuestion for both level one and two
-  document.getElementById("lvl1-hardest-id").innerText =
+  document.getElementById('lvl1-hardest-id').innerText =
     hardest.mostWrongQuestionIdLevel1;
-  document.getElementById("lvl1-hardest-count").innerText =
+  document.getElementById('lvl1-hardest-count').innerText =
     hardest.maxWrongCountLevel1;
-  document.getElementById("lvl2-hardest-id").innerText =
+  document.getElementById('lvl2-hardest-id').innerText =
     hardest.mostWrongQuestionIdLevel2;
-  document.getElementById("lvl2-hardest-count").innerText =
+  document.getElementById('lvl2-hardest-count').innerText =
     hardest.maxWrongCountLevel2;
   //most easy
-  document.getElementById("lvl1-easiest-id").innerText =
+  document.getElementById('lvl1-easiest-id').innerText =
     hardest.mostCorrectQuestionIdLevel1;
-  document.getElementById("lvl1-easiest-count").innerText =
+  document.getElementById('lvl1-easiest-count').innerText =
     hardest.maxCorrectCountLevel1;
-  document.getElementById("lvl2-easiest-id").innerText =
+  document.getElementById('lvl2-easiest-id').innerText =
     hardest.mostCorrectQuestionIdLevel2;
-  document.getElementById("lvl2-easiest-count").innerText =
+  document.getElementById('lvl2-easiest-count').innerText =
     hardest.maxCorrectCountLevel2;
 
   //longest question
@@ -176,15 +176,15 @@ window.onload = function () {
     longestTime: longestTimeLvl2,
     longestQuestionId: longestQuestionIdLvl2,
   } = logestQuestion(2);
-  document.getElementById("lvl1-longest-id").innerText = longestQuestionIdLvl1;
-  document.getElementById("lvl1-longest-time").innerText = longestTimeLvl1;
-  document.getElementById("lvl2-longest-id").innerText = longestQuestionIdLvl2;
-  document.getElementById("lvl2-longest-time").innerText = longestTimeLvl2;
+  document.getElementById('lvl1-longest-id').innerText = longestQuestionIdLvl1;
+  document.getElementById('lvl1-longest-time').innerText = longestTimeLvl1;
+  document.getElementById('lvl2-longest-id').innerText = longestQuestionIdLvl2;
+  document.getElementById('lvl2-longest-time').innerText = longestTimeLvl2;
 
   //leaderboard function
   const leaderboard1 = leaderboard(1);
   const leaderboard2 = leaderboard(2);
   console.log(leaderboard2);
-  appendleaderboard(leaderboard1, "leaderboard1");
-  appendleaderboard(leaderboard2, "leaderboard2");
+  appendleaderboard(leaderboard1, 'leaderboard1');
+  appendleaderboard(leaderboard2, 'leaderboard2');
 };
