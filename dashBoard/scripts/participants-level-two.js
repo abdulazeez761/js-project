@@ -20,10 +20,11 @@ function loadAllParticipants() {
   }
 
   for (let participantID in levelParticipants) {
-    const table = document.querySelector('table tbody');
-    const row = document.createElement('tr');
-    let participant = participants[participantID];
-    row.innerHTML = `
+    if (levelParticipants[participantID].isAvtive) {
+      const table = document.querySelector('table tbody');
+      const row = document.createElement('tr');
+      let participant = participants[participantID];
+      row.innerHTML = `
                       <td>${participantID}</td>
                       <td>${participant.name}</td>
                      
@@ -39,7 +40,8 @@ function loadAllParticipants() {
                   </button>
                 </td>
                   `;
-    table.appendChild(row);
+      table.appendChild(row);
+    }
   }
 }
 

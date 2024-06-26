@@ -19,26 +19,28 @@ function loadAllParticipants() {
   }
 
   for (let participantID in levelParticipants) {
-    const table = document.querySelector('table tbody');
-    const row = document.createElement('tr');
-    let participant = participants[participantID];
-    row.innerHTML = `
-                      <td>${participantID}</td>
-                      <td>${participant.name}</td>
-                     
-                     
-                      <td>
-                  <button class="edit-button" onclick="openEditModal(this)">
-                    <i class="fa-solid fa-user-pen"></i>
-                  </button>
-                </td>
-                <td>
-                  <button class="delete-button" onclick="deleteParticipant(this)">
-                    <i class="fa-solid fa-trash"></i>
-                  </button>
-                </td>
-                  `;
-    table.appendChild(row);
+    if (levelParticipants[participantID].isActive) {
+      const table = document.querySelector('table tbody');
+      const row = document.createElement('tr');
+      let participant = participants[participantID];
+      row.innerHTML = `
+                        <td>${participantID}</td>
+                        <td>${participant.name}</td>
+                       
+                       
+                        <td>
+                    <button class="edit-button" onclick="openEditModal(this)">
+                      <i class="fa-solid fa-user-pen"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button class="delete-button" onclick="deleteParticipant(this)">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </td>
+                    `;
+      table.appendChild(row);
+    }
   }
 }
 function deleteParticipant(button) {

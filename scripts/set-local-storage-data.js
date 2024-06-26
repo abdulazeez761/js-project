@@ -5,7 +5,7 @@ localStorage.setItem(
 `
 );
 //testing
-localStorage.setItem('currentParticipantID', '1');
+// localStorage.setItem('currentParticipantID', '1');
 
 localStorage.setItem(
   'level-two',

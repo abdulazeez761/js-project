@@ -3,17 +3,14 @@
   "started": "0",
   "1": {
     "questionContext": "example of the question text",
-    "correctAnswers": "300",
-    "totalCorrectAnswers": 0
+    "correctAnswers": "300"
   },
   "2": {
     "questionContext": "example of the question text",
-    "correctAnswers": "900",
-    "totalCorrectAnswers": 0
+    "correctAnswers": "900"
   },
   "3": {
     "questionContext": "example of the question text",
-    "correctAnswers": "100",
-    "totalCorrectAnswers": 0
+    "correctAnswers": "100"
   }
 }

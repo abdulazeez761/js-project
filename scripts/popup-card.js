@@ -40,6 +40,13 @@ function enterIDPopUp(Level) {
             icon: 'info', // Icon type
             confirmButtonColor: '#3085d6', // Color of the confirm button
           });
+        } else if (!storedUsers[userID].isActive) {
+          Swal.fire({
+            title: 'no such an account with this ID', // Title of the info popup
+            text: 'pleas enter a valid id', // Text of the info popup
+            icon: 'error', // Icon type
+            confirmButtonColor: '#3085d6', // Color of the confirm button
+          });
         } else {
           // If the ID is valid, proceed with storing user information
           const started = storedLevel.started; // Get the started status

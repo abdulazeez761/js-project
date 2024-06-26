@@ -14,6 +14,7 @@ let createParticipants = (level, name) => {
     correctAnswers: 0,
     wrongAnswers: 0,
     questions: {},
+    isActive: true,
   };
 
   allParticipants[id] = newParticipant;
@@ -29,7 +30,7 @@ let deleteParticipantFromLocalStorage = (id) => {
     return;
   }
 
-  delete allParticipants[id];
+  allParticipants[id].isActive = false;
 
   localStorage.setItem('participants', JSON.stringify(allParticipants));
 };
