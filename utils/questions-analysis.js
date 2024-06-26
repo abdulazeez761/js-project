@@ -18,35 +18,37 @@ function analyzeQuestions() {
 
       // Iterate over each question answered by the participant
       for (let questionId in questions) {
-        let questionData = questions[questionId];
+        if (questions[questionId].isActive) {
+          let questionData = questions[questionId];
 
-        // Count wrong and correct answers for level 1 participants
-        if (participant.level == 1) {
-          if (questionData.correct === false) {
-            if (!questionWrongCountsLevel1[questionId]) {
-              questionWrongCountsLevel1[questionId] = 0;
+          // Count wrong and correct answers for level 1 participants
+          if (participant.level == 1) {
+            if (questionData.correct === false) {
+              if (!questionWrongCountsLevel1[questionId]) {
+                questionWrongCountsLevel1[questionId] = 0;
+              }
+              questionWrongCountsLevel1[questionId]++;
+            } else if (questionData.correct === true) {
+              if (!questionCorrectCountsLevel1[questionId]) {
+                questionCorrectCountsLevel1[questionId] = 0;
+              }
+              questionCorrectCountsLevel1[questionId]++;
             }
-            questionWrongCountsLevel1[questionId]++;
-          } else if (questionData.correct === true) {
-            if (!questionCorrectCountsLevel1[questionId]) {
-              questionCorrectCountsLevel1[questionId] = 0;
-            }
-            questionCorrectCountsLevel1[questionId]++;
           }
-        }
 
-        // Count wrong and correct answers for level 2 participants
-        if (participant.level == 2) {
-          if (questionData.correct === false) {
-            if (!questionWrongCountsLevel2[questionId]) {
-              questionWrongCountsLevel2[questionId] = 0;
+          // Count wrong and correct answers for level 2 participants
+          if (participant.level == 2) {
+            if (questionData.correct === false) {
+              if (!questionWrongCountsLevel2[questionId]) {
+                questionWrongCountsLevel2[questionId] = 0;
+              }
+              questionWrongCountsLevel2[questionId]++;
+            } else if (questionData.correct === true) {
+              if (!questionCorrectCountsLevel2[questionId]) {
+                questionCorrectCountsLevel2[questionId] = 0;
+              }
+              questionCorrectCountsLevel2[questionId]++;
             }
-            questionWrongCountsLevel2[questionId]++;
-          } else if (questionData.correct === true) {
-            if (!questionCorrectCountsLevel2[questionId]) {
-              questionCorrectCountsLevel2[questionId] = 0;
-            }
-            questionCorrectCountsLevel2[questionId]++;
           }
         }
       }

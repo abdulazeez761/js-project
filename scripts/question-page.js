@@ -68,7 +68,11 @@ for (let i = 1; i <= numberOfQuestions; i++) {
 // Getting all question IDs
 let allQuestionsIDs = [];
 for (let questionID in levelQuestions) {
-  if (questionID !== 'levelID' && questionID !== 'started') {
+  if (
+    questionID !== 'levelID' &&
+    questionID !== 'started' &&
+    levelQuestions[questionID].isActive
+  ) {
     allQuestionsIDs.push(questionID);
   }
 }

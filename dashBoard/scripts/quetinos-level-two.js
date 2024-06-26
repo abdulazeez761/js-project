@@ -27,9 +27,14 @@ function loadAllQuestios() {
                 </button>
               </td>
               <td>
-                <button class="delete-button" onclick="deleteQuestion(this)">
+                 ${
+                   allQuestions[q].isActive
+                     ? `<button class="delete-button" onclick="deleteQuestion(this,2)">
                   <i class="fa-solid fa-trash"></i>
-                </button>
+                </button>`
+                     : `<button class="delete-button" onclick="restoreQuestion(this,2)">
+                      <i class="fas fa-trash-restore"></i>`
+                 }
               </td>
                 `;
         table.appendChild(row);
@@ -45,38 +50,6 @@ function addQuestion() {
     createQuestions(questionText, questionAnswer, 2);
     location.reload();
   }
-}
-function deleteQuestion(button) {
-  const row = button.parentNode.parentNode;
-  //getting the question id
-  QID = row.cells[0];
-  Swal.fire({
-    title: 'Are you sure?',
-    text: 'You will not be able to recover this Question!',
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonText: 'Yes, delete it!',
-    cancelButtonText: 'No, keep it',
-    confirmButtonColor: '#fc0102',
-  }).then((result) => {
-    if (result.isConfirmed) {
-      deleteLevelQuestion(2, QID.innerText);
-      row.parentNode.removeChild(row);
-      Swal.fire({
-        title: 'Deleted',
-        text: 'Question has been deleted.',
-        icon: 'success',
-        confirmButtonColor: '#3085d6',
-      });
-    } else if (result.dismiss === Swal.DismissReason.cancel) {
-      Swal.fire({
-        title: 'Question',
-        text: 'Question deletion was cancelled',
-        icon: 'info',
-        confirmButtonColor: '#3085d6',
-      });
-    }
-  });
 }
 
 function openEditModal(button) {

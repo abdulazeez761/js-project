@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Ensure data is available before populating the table
   if (
-    Object.keys(questionsData).length > 0 &&
+    Object.keys(questionsData).length > 2 &&
     Object.keys(participantsData).length > 0
   ) {
     populateTableHeaders(questionsData);

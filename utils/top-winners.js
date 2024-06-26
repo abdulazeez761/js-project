@@ -37,7 +37,8 @@ function leaderboard(lvl) {
           const totalTimeInSeconds = calculateTotalTime(participant.questions);
           participant.totalTime = totalTimeInSeconds.toString() + 's';
         }
-        return participant.totalTime != '' && participant.level == lvl;
+        if (participant.isActive)
+          return participant.totalTime != '' && participant.level == lvl;
       }
     );
 

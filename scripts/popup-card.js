@@ -53,9 +53,33 @@ function enterIDPopUp(Level) {
           localStorage.setItem('loged-in-userID', userID); // Store the logged-in user ID
           localStorage.setItem('loged-in-user-level', Level); // Store the logged-in user level
           // Determine the dashboard URL based on the started status
-          const dashboardURL = started == 1 && `../pages/question-page.html`;
 
-          window.location.href = dashboardURL; // Redirect to the dashboard URL
+          let participantLevel = Level == 1 ? 'level-one' : 'level-two';
+          let levelQuestions = JSON.parse(
+            localStorage.getItem(participantLevel)
+          );
+          let allQuestionsIDs = [];
+          for (let questionID in levelQuestions) {
+            if (
+              questionID !== 'levelID' &&
+              questionID !== 'started' &&
+              levelQuestions[questionID].isActive
+            ) {
+              allQuestionsIDs.push(questionID);
+            }
+          }
+          if (allQuestionsIDs.length == 0) {
+            Swal.fire({
+              title: 'no avalable questinos', // Title of the info popup
+              text: 'try again later', // Text of the info popup
+              icon: 'info', // Icon type
+              confirmButtonColor: '#3085d6', // Color of the confirm button
+            });
+          } else {
+            const dashboardURL = started == 1 && `../pages/question-page.html`;
+
+            window.location.href = dashboardURL; // Redirect to the dashboard URL
+          }
         }
       } else {
         // Redirect to the exam-not-started page if the level has not started

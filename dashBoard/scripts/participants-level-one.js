@@ -19,61 +19,30 @@ function loadAllParticipants() {
   }
 
   for (let participantID in levelParticipants) {
-    if (levelParticipants[participantID].isActive) {
-      const table = document.querySelector('table tbody');
-      const row = document.createElement('tr');
-      let participant = participants[participantID];
-      row.innerHTML = `
+    const table = document.querySelector('table tbody');
+    const row = document.createElement('tr');
+    let participant = participants[participantID];
+    row.innerHTML = `
                         <td>${participantID}</td>
                         <td>${participant.name}</td>
-                       
-                       
                         <td>
                     <button class="edit-button" onclick="openEditModal(this)">
                       <i class="fa-solid fa-user-pen"></i>
                     </button>
                   </td>
                   <td>
-                    <button class="delete-button" onclick="deleteParticipant(this)">
+                    ${
+                      participant.isActive
+                        ? `<button class="delete-button" onclick="deleteParticipant(this)">
                       <i class="fa-solid fa-trash"></i>
-                    </button>
+                    </button>`
+                        : `<button class="delete-button" onclick="restoreParticipant(this)">
+                      <i class="fas fa-trash-restore"></i>`
+                    }
                   </td>
                     `;
-      table.appendChild(row);
-    }
+    table.appendChild(row);
   }
-}
-function deleteParticipant(button) {
-  const row = button.parentNode.parentNode;
-  const id = button.parentNode.parentNode.children[0].textContent;
-
-  Swal.fire({
-    title: 'Are you sure?',
-    text: 'You will not be able to recover this participant!',
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonText: 'Yes, delete it!',
-    cancelButtonText: 'No, keep it',
-    confirmButtonColor: '#fc0102',
-  }).then((result) => {
-    if (result.isConfirmed) {
-      deleteParticipantFromLocalStorage(id);
-      row.parentNode.removeChild(row);
-      Swal.fire({
-        title: 'Deleted',
-        text: 'Participant has been deleted.',
-        icon: 'success',
-        confirmButtonColor: '#3085d6',
-      });
-    } else if (result.dismiss === Swal.DismissReason.cancel) {
-      Swal.fire({
-        title: 'Cancelled',
-        text: 'Participant deletion was cancelled',
-        icon: 'info',
-        confirmButtonColor: '#3085d6',
-      });
-    }
-  });
 }
 
 function openEditModal(button) {
